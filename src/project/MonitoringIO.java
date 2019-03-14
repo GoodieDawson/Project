@@ -13,7 +13,8 @@ public class MonitoringIO extends Monitoring{
 
 	public static void enob () {
 		System.out.println("Please enter the following details in this order about your Obsevatory event, separated by commas:"
-				+ "\n\nName of the Obsevartory"
+				+ "The country in which the Obsevartory is based"
+				+ "\nName of the Obsevartory"
 				+ "\nThe Year in which observations began"
 				+ "\nThe area covered by the Observatory in square kilometers");
 		
