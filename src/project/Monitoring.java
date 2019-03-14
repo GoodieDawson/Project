@@ -14,7 +14,7 @@ public class Monitoring extends Observatory{
 	private static ArrayList<Observatory> ObList = new ArrayList<Observatory>();
 	
 	/**
-	 * A method that returns the observatory with the largest average “galamsey” colour value. 
+	 * A method that returns the observatory with the largest average "galamsey" colour value. 
 	 * @return
 	 */
 	public static Observatory hiObAvg () {
