@@ -6,7 +6,7 @@ package project;
 import java.util.ArrayList;
 
 /**
- * @author Goodie Blake Dawson
+ * @author Group_18
  *
  */
 public class Monitoring extends Observatory{
@@ -60,7 +60,7 @@ public class Monitoring extends Observatory{
 	 * @param num
 	 * @return
 	 */
-	public ArrayList<Galamsey> givenList(int num) {
+	public static ArrayList<Galamsey> givenList(int num) {
 		ArrayList<Galamsey> givList = new ArrayList<Galamsey>();
 		if (ObList.isEmpty()) {
 			System.out.println("No list can be created as there are no observatories");
