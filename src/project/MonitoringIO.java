@@ -57,7 +57,7 @@ public class MonitoringIO extends Monitoring{
 		Scanner input = new Scanner(System.in);
 		
 		while (true) {
-			System.out.println("\nPlease find below a list of inputs for your possible actions: "
+			System.out.println("\nPlease find below a list of inputs for your possible actions:"
 					+ "\nenob: To enter Obsevatory data"
 					+ "\nengal: To enter Galamsey data"
 					+ "\nstats: To view certain importantant figures about the recorded data"
