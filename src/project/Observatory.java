@@ -16,7 +16,7 @@ public class Observatory extends Galamsey {
 	
 	/**
 	 * Instance variables for observatory name (obName), observatory country (obCount),
-	 * observatory year (obYear), observatory area (in square kilometres), and a list
+	 * observatory year (obYear), observatoratory area (in square kilometres), and a list
 	 * of galamsey events.
 	 */
 
