@@ -7,7 +7,7 @@ package project;
  * @author Goodie Blake Dawson
  *
  */
-public class Monitoring {
+public class Monitoring extends Observatory{
 
 	/**
 	 * @param args
