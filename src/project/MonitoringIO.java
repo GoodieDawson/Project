@@ -10,36 +10,62 @@ import java.util.Scanner;
  */
 public class MonitoringIO extends Monitoring{
 	
-	public static Exit() {
+
+	public static void enob () {
+		
+	}
+	
+	public static void engal () {
+		
+	}
+	
+	public static void stats () {
+		
+	}
+	
+	public static void exit() {
 		System.exit(0);
 	}
-
+	
+	public static void start() {
+		
+		Scanner input = new Scanner(System.in);
+		
+		while (true) {
+			System.out.println("\nPlease find below a list of inputs for your possible actions:"
+					+ "\nenob: To enter Obsevatory data"
+					+ "\nengal: To enter Galamsey data"
+					+ "\nstats: To view certain importantant figures about the recorded data"
+					+ "\nexit: To end the program");
+					 
+			String task = input.nextLine();
+			
+			switch(task) {
+			case "enob" : 
+				enob();
+				break;
+			case "engal" : 
+				engal();
+				break;
+			case "stats" : 
+				stats();
+				break;
+			case "exit" : 
+				exit();
+				break;
+		}
+		
+	}
+		
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		
-		System.out.println("Hello and Welcome.\n"
-				+ "This is a program that monitors Galamsey events."
+		System.out.println("Hello and Welcome."
+				+ "\nThis is a program that monitors Galamsey events.");
+		start();
 		
-		Scanner input = new Scanner(System.in);
-
-		while (true) {
-			System.out.println("Please find below a list of inputs for your possible actions");
-					 
-			String task = input.nextLine();
-			
-			switch(input) {
-			case Green : 
-				this.colVal = 1;
-				break;
-			case Yellow : 
-				this.colVal = 2;
-				break;
-			case Brown : 
-				this.colVal = 3;
-				break;
-		}
 			
 
 		}
