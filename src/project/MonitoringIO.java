@@ -16,7 +16,7 @@ public class MonitoringIO {
 	public static void main(String[] args) {
 		
 		Scanner input = new Scanner(System.in);
-		
+		//haha im here
 		while (true) {
 			System.out.println("x");
 			String task = input.nextLine();
