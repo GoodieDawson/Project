@@ -13,18 +13,17 @@ public class MonitoringIO extends Monitoring{
 
 	public static void enob () {
 		System.out.println("Please enter the following details in this order about your Obsevatory event, separated by commas:"
-				+ "The country in which the Obsevartory is based"
 				+ "\nName of the Obsevartory"
+				+ "\nThe country in which the Obsevartory is based"
 				+ "\nThe Year in which observations began"
 				+ "\nThe area covered by the Observatory in square kilometers");
 		
 		Scanner input = new Scanner(System.in);
-		String obdata =input.nextLine();
+		String obdata = input.nextLine();
 		
 		String[] ob = obdata.split(",");
-		new Observatory(ob[0], ob[1], Integer.parseInt(ob[2]), Double.parseDouble(ob[3]));
+		Observatory a = new Observatory(ob[0], ob[1], Integer.parseInt(ob[2]), Double.parseDouble(ob[3]));
 		
-		input.close();
 		start();
 	}
 	
@@ -84,33 +83,35 @@ public class MonitoringIO extends Monitoring{
 		
 		Scanner input = new Scanner(System.in);
 		
-		while (true) {
-			System.out.println("\nPlease find below a list of input words and their respective actions."
-					+ "\nEnter one of the words to begin:"
-					+ "\n\nenob: To input Obsevatory data"
-					+ "\nengal: To input Galamsey data"
-					+ "\nstats: To view certain monitoring statistics about the recorded data"
-					+ "\nexit: To end the program");
+		System.out.println("\nPlease find below a list of input words and their respective actions."
+				+ "\nEnter one of the words to begin:"
+				+ "\n\nenob: To input Obsevatory data"
+				+ "\nengal: To input Galamsey data"
+				+ "\nstats: To view certain monitoring statistics about the recorded data"
+				+ "\nexit: To end the program");
 					
 					 
-			String task = input.nextLine();
+		String task = input.nextLine();
 			
-			switch(task) {
-			case "enob" : 
-				enob();
-				break;
-			case "engal" : 
-				engal();
-				break;
-			case "stats" : 
-				stats();
-				break;
-			case "exit" : 
-				exit();
-				break;
-			}
-
+		switch(task) {
+		case "enob" : 
+			input.close();
+			enob();
+			break;
+		case "engal" :
+			input.close();
+			engal();
+			break;
+		case "stats" :
+			input.close();
+			stats();
+			break;
+		case "exit" :
+			input.close();
+			exit();
+			break;
 		}
+
 	}
 		
 	/**
