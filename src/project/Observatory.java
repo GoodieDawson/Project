@@ -9,7 +9,7 @@ package project;
 import java.util.ArrayList;
 
 /**
- * @author Group 18
+ * @author Group_18
  *
  */
 public class Observatory extends Galamsey {

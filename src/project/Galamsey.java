@@ -7,7 +7,7 @@
 package project;
 
 /**
- * @author Group 18
+ * @author Group_18
  * 
  */
 public class Galamsey {
