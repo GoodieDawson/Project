@@ -37,6 +37,7 @@ public class Monitoring extends Observatory{
 	
 	/**
 	 * A method that returns the largest "galamsey" colour ever recorded
+	 * in all the observatories.
 	 * @return
 	 */
 	
