@@ -54,6 +54,26 @@ public class Monitoring extends Observatory{
 	}
 	
 	/**
+	 * A method that takes in a given number and returns a list of all "galamsey"
+	 * recorded in all observatories with a colour value greater than the given number.
+	 *
+	 * @param num
+	 * @return
+	 */
+	public ArrayList<Galamsey> givenList(int num) {
+		ArrayList<Galamsey> givList = new ArrayList<Galamsey>();
+		if (ObList.isEmpty()) {
+			System.out.println("No list can be created as there are no observatories");
+		}
+		else {
+			for (Observatory obj : ObList) {
+				givList.addAll(obj.aboveList(num));
+			}
+		}
+		return givList;
+	}
+	
+	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
