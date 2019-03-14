@@ -15,8 +15,23 @@ public class MonitoringIO extends Monitoring{
 		
 	}
 	
+	/**
+	 * A method that prompts the user to input details for one Galamsey event and
+	 * creates an object of the Galamsey class with those details.
+	 */
 	public static void engal () {
+		System.out.println("Please enter the following details about your Galamsey event, separated by commas:"
+				+ "\n\nVegetation colour of the area: Green, Yellow or Brown"
+				+ "\nPosition of area: Longitude and latitude (sample format: 5.5862° N, 0.1752° W)"
+				+ "\nYear of event");
 		
+		Scanner obinput = new Scanner(System.in);
+		String obdata = obinput.nextLine();
+		
+		String[] obArray = obdata.split(",");
+		new Galamsey(obArray[0], Double.parseDouble(obArray[1]), Double.parseDouble(obArray[2]), Integer.parseInt(obArray[3]));
+		
+		obinput.close();
 	}
 	
 	public static void stats () {

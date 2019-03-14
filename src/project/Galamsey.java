@@ -1,5 +1,5 @@
 /**
- * A class called Galamsey that record where �galamsey� occurs and how devastating it is in Africa.
+ * A class called Galamsey that record where Galamsey occurs and how devastating it is in Africa.
  * This will help African security agencies and mining authorities better understand and detect
  * illegal mining.
  */
@@ -11,19 +11,50 @@ package project;
  * 
  */
 public class Galamsey {
+	
+	/**
+	 * A position class that takes the longitude and latitude of the Galamsey area
+	 * Sample format is: 5.5862° N, 0.1752° W (the angle in degrees followed by the direction)
+	 */
+	private class Position {
+		private double lon;
+		private double lat;
+		
+		/**
+		 * A constructor that takes the longitude and latitude of the Galamsey area as
+		 * parameters for the Position class
+		 * @param lon
+		 * @param lat
+		 */
+		private Position(double lon, double lat) {
+			this.lon = lon;
+			this.lat = lat;
+		}
+
+		/**
+		 * A method that creates a string representation of the Position object with
+		 * the longitude and latitude
+		 */
+		@Override
+		public String toString() {
+			return "Position" 
+					+"\nLongitude: " + lon + "Latitude: " + lat;
+		}
+	}
 
 	/**
-	 * Instance variables for vegetation colour (VegCol), colour value (ColVal),
-	 * position (longitude and latitude) and year (year) of Galamsey event
+	 * Instance variables for Galamsey: vegetation colour (VegCol) of the area and its 
+	 * associated colour value (ColVal), position (longitude and latitude) of the area 
+	 * and year (year) of Galamsey event
 	 */
 	private enum VegCol {Green, Yellow, Brown};
 	VegCol vegCol;
 	private int colVal;
-	private double pos;
+	private Position pos;
 	private int year;
 	
 	/**
-	 * Default constructor for Galamsey class
+	 * A default constructor for Galamsey class
 	 */
 	public Galamsey() {
 		
@@ -37,7 +68,7 @@ public class Galamsey {
 	 * @param pos
 	 * @param year
 	 */
-	public Galamsey(String vegCol, double pos, int year  ) {
+	public Galamsey(String vegCol, double lon, double lat, int year) {
 		this.vegCol = VegCol.valueOf(vegCol);
 		switch(this.vegCol) {
 			case Green : 
@@ -50,7 +81,7 @@ public class Galamsey {
 				this.colVal = 3;
 				break;
 		}
-		this.pos = pos;
+		this.pos = new Position(lon, lat);
 		this.year = year;
 	}
 	
@@ -95,7 +126,7 @@ public class Galamsey {
 	 * This accessor returns the position (longitude and latitude) of a Galamsey event
 	 * @return the pos
 	 */
-	public double getPos() {
+	public Position getPos() {
 		return pos;
 	}
 
@@ -103,8 +134,8 @@ public class Galamsey {
 	 * This mutator allows you to set the position (longitude and latitude) of a Galamsey event
 	 * @param pos
 	 */
-	public void setPos(double pos) {
-		this.pos = pos;
+	public void setPos(double lon, double lat) {
+		this.pos = new Position(lon, lat);
 	}
 
 	/**
@@ -152,7 +183,10 @@ public class Galamsey {
 		Galamsey other = (Galamsey) obj;
 		if (colVal != other.colVal)
 			return false;
-		if (Double.doubleToLongBits(pos) != Double.doubleToLongBits(other.pos))
+		if (pos == null) {
+			if (other.pos != null)
+				return false;
+		} else if (!pos.equals(other.pos))
 			return false;
 		if (vegCol != other.vegCol)
 			return false;
@@ -165,8 +199,8 @@ public class Galamsey {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Galamsey a = new Galamsey("Green", 49, 2019);
-		Galamsey b = new Galamsey("Green", 49, 2019);
+		Galamsey a = new Galamsey("Green", 4, 9, 2019);
+		Galamsey b = new Galamsey("Green", 4, 9, 2019);
 		System.out.println(a.equals(b));
 		
 		System.out.println(a.getVegCol());
@@ -177,7 +211,7 @@ public class Galamsey {
 		a.setVegCol("Brown");
 		System.out.println(a.getVegCol());
 		System.out.println(a.getColVal());
-		a.setPos(77);
+		a.setPos(77, 55);
 		System.out.println(a.getPos());
 		a.setYear(2018);
 		System.out.println(a.getYear());
