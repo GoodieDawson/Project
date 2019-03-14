@@ -56,7 +56,7 @@ public class Galamsey {
 	
 	// Accessors and Mutators
 	/**
-	 * This accessor returns the vegetation colour of a Galamsey event
+	 * This accessor returns the vegetation colour of the area of the Galamsey event
 	 * @return the vegCol
 	 */
 	public VegCol getVegCol() {
