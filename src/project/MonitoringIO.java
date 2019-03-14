@@ -9,7 +9,6 @@ import java.util.Scanner;
  *
  */
 public class MonitoringIO extends Monitoring{
-	
 
 	public static void enob () {
 		
@@ -32,11 +31,13 @@ public class MonitoringIO extends Monitoring{
 		Scanner input = new Scanner(System.in);
 		
 		while (true) {
-			System.out.println("\nPlease find below a list of inputs for your possible actions:"
-					+ "\nenob: To enter Obsevatory data"
-					+ "\nengal: To enter Galamsey data"
-					+ "\nstats: To view certain importantant figures about the recorded data"
+			System.out.println("\nPlease find below a list of input words and their respective actions."
+					+ "\nEnter one of the words to begin:"
+					+ "\n\nenob: To input Obsevatory data"
+					+ "\nengal: To input Galamsey data"
+					+ "\nstats: To view certain monitoring statistics about the recorded data"
 					+ "\nexit: To end the program");
+					
 					 
 			String task = input.nextLine();
 			
@@ -53,6 +54,7 @@ public class MonitoringIO extends Monitoring{
 			case "exit" : 
 				exit();
 				break;
+			}
 		}
 		
 	}
@@ -62,14 +64,10 @@ public class MonitoringIO extends Monitoring{
 	 */
 	public static void main(String[] args) {
 		
-		System.out.println("Hello and Welcome."
-				+ "\nThis is a program that monitors Galamsey events.");
+		System.out.println("Welcome to the Illegal Mining (Galamsey) Monitoring System."
+				+ "\nThis program will help you keep track of Galamsey events and provide certain key statistics.");
 		start();
 		
-			
-
-		}
 
 	}
-
 }

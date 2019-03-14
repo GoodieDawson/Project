@@ -139,7 +139,7 @@ public class Observatory extends Galamsey {
 	}
 	
 	/**
-	 * A method to add a galamsey event to the observatory's list of events.
+	 * A method to add a Galamsey event to the observatory's list of events.
 	 * @param obj
 	 */
 	public void addEvent(Galamsey obj) {
@@ -155,7 +155,7 @@ public class Observatory extends Galamsey {
 	}
 	
 	/**
-	 * A method that returns the largest "galamsey" colour value recorded by the observatory
+	 * A method that returns the largest Galamsey colour value recorded by the observatory
 	 * @return
 	 */
 	public int maxColVal() {
@@ -173,7 +173,7 @@ public class Observatory extends Galamsey {
 	}
 	
 	/**
-	 * A method that returns the average "galamsey" colour value recorded by the observatory
+	 * A method that returns the average Galamsey colour value recorded by the observatory
 	 * @return
 	 */
 	public double avgColVal() {

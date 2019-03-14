@@ -13,8 +13,8 @@ package project;
 public class Galamsey {
 
 	/**
-	 * Instance variables for vegetation colour (VegCol), colour value,
-	 * position (longitude and latitude) and year of galamsey.
+	 * Instance variables for vegetation colour (VegCol), colour value (ColVal),
+	 * position (longitude and latitude) and year (year) of Galamsey event
 	 */
 	private enum VegCol {Green, Yellow, Brown};
 	VegCol vegCol;
@@ -30,8 +30,8 @@ public class Galamsey {
 	}
 	
 	/**
-	 * Overloaded constructor for Galamsey class
-	 * Switch case to assign colour values based on vegetation colour
+	 * An overloaded constructor for the Galamsey class
+	 * A switch case to assign colour values to Galamsey events based on their vegetation colour
 	 * 
 	 * @param vegCol
 	 * @param pos
@@ -56,7 +56,7 @@ public class Galamsey {
 	
 	// Accessors and Mutators
 	/**
-	 * Accessor for vegetation colour
+	 * This accessor returns the vegetation colour of a Galamsey event
 	 * @return the vegCol
 	 */
 	public VegCol getVegCol() {
@@ -64,8 +64,9 @@ public class Galamsey {
 	}
 
 	/**
-	 * Mutator for vegetation colour
-	 * @param vegCol the vegCol to set
+	 * This mutator allows you to set the vegetation colour of a Galamsey event
+	 * It also assigns a colour value to a Galamsey event after the vegetation color is input or changed
+	 * @param vegCol
 	 */
 	public void setVegCol(String vegCol) {
 		this.vegCol = VegCol.valueOf(vegCol);
@@ -83,7 +84,7 @@ public class Galamsey {
 	}
 
 	/**
-	 * Accessor for colour value
+	 * This accessor returns the colour value of a Galamsey event
 	 * @return the colValue
 	 */
 	public int getColVal() {
@@ -91,7 +92,7 @@ public class Galamsey {
 	}
 
 	/**
-	 * Accessor for position (longitude and latitude)
+	 * This accessor returns the position (longitude and latitude) of a Galamsey event
 	 * @return the pos
 	 */
 	public double getPos() {
@@ -99,15 +100,15 @@ public class Galamsey {
 	}
 
 	/**
-	 * Mutator for position (longitude and latitude)
-	 * @param pos the pos to set
+	 * This mutator allows you to set the position (longitude and latitude) of a Galamsey event
+	 * @param pos
 	 */
 	public void setPos(double pos) {
 		this.pos = pos;
 	}
 
 	/**
-	 * Accessor for year of illegal mining
+	 * This accessor returns the year of a Galamsey event
 	 * @return the year
 	 */
 	public int getYear() {
@@ -115,8 +116,8 @@ public class Galamsey {
 	}
 
 	/**
-	 * Mutator for year of illegal mining
-	 * @param year the year to set
+	 * This mutator allows you to set the year of the illegal mining activity for a Galamsey event
+	 * @param year
 	 */
 	public void setYear(int year) {
 		this.year = year;
@@ -124,7 +125,9 @@ public class Galamsey {
 
 	
 	/**
-	 * A method that creates a string representation of the Galamsey object 
+	 * A method that creates a string representation of the Galamsey object with relevant
+	 * details such as the area's vegetation colour and assigned colour value, position and year
+	 * of occurrence
 	 */
 	@Override
 	public String toString() {
