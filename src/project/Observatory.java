@@ -161,8 +161,8 @@ public class Observatory extends Galamsey {
 	public int maxColVal() {
 		int val = 0;
 		if (getEvents().isEmpty()) {
-			System.out.println("There max value is zero as there are no recorded events for this "
-					+ "observatory");	
+			System.out.println("The max value is zero as there are no recorded events for this "
+					+ "observatory");
 		}
 		else {
 			for (Galamsey obj: getEvents()) {

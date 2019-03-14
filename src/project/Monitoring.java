@@ -10,6 +10,30 @@ import java.util.ArrayList;
  *
  */
 public class Monitoring extends Observatory{
+
+	private static ArrayList<Observatory> ObList = new ArrayList<Observatory>();
+	
+	/**
+	 * A method that returns the largest average "galamsey" value
+	 * @return
+	 */
+	public static Observatory hiObAvg () {
+		double hiAvg = 0;
+		Observatory hiOb = null;
+		
+		for (Observatory ob : ObList) {
+			int obSum = 0;
+			
+			for (Galamsey galam : ob.getEvents()) {
+				obSum = obSum + galam.getColVal();
+			}
+			
+			double obAvg = obSum / ob.getEvents().size();
+			if (obAvg > hiAvg) { hiOb = ob; }
+		}
+		
+		return hiOb;
+	}
 	
 	/**
 	 * A method that returns the largest "galamsey" colour ever recorded
@@ -28,27 +52,6 @@ public class Monitoring extends Observatory{
 		}
 		return max;
 	}
-		
-
-	private static ArrayList<Observatory> ObList = new ArrayList<Observatory>();
-	
-	public static double hiObAvg () {
-		double hiAvg = 0;
-		
-		for (Observatory ob : ObList) {
-			int obSum = 0;
-			
-			for (Galamsey galam : ob.getEvents()) {
-				obSum = obSum + galam.getColVal();
-			}
-			
-			double obAvg = obSum / ob.getEvents().size();
-			if (obAvg > hiAvg) { hiAvg = obAvg; }
-		}
-		
-		return hiAvg;
-	}
-	
 	
 	/**
 	 * @param args

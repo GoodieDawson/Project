@@ -1,5 +1,5 @@
 /**
- * A class called Galamsey that record where “galamsey” occurs and how devastating it is in Africa.
+ * A class called Galamsey that record where ï¿½galamseyï¿½ occurs and how devastating it is in Africa.
  * This will help African security agencies and mining authorities better understand and detect
  * illegal mining.
  */
