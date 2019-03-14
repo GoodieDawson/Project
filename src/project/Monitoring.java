@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Monitoring extends Observatory{
 	
 	/**
-	 * A method that returns the largest "galamsey" colour ever recorded.
+	 * A method that returns the largest "galamsey" colour ever recorded
 	 * @return
 	 */
 	
