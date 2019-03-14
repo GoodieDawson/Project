@@ -14,7 +14,7 @@ public class Monitoring extends Observatory{
 	private static ArrayList<Observatory> ObList = new ArrayList<Observatory>();
 	
 	/**
-	 * A method that returns the largest average "galamsey" value
+	 * A method that returns the observatory with the largest average “galamsey” colour value. 
 	 * @return
 	 */
 	public static Observatory hiObAvg () {
@@ -36,10 +36,9 @@ public class Monitoring extends Observatory{
 	}
 	
 	/**
-	 * A method that returns the largest "galamsey" colour ever recorded
+	 * A method that returns the largest "galamsey" colour ever recorded.
 	 * @return
 	 */
-	
 	public static int maxValEver() {
 		int max = 0;
 		if (ObList.isEmpty()) {
@@ -57,7 +56,7 @@ public class Monitoring extends Observatory{
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
