@@ -1,5 +1,7 @@
 /**
- * 
+ * A class called Monitoring that extends the Observatory class.
+ * It contains information about all the observatories, as well as methods to retrieve
+ * some key statistics about the data.
  */
 package project;
 
@@ -14,7 +16,7 @@ public class Monitoring extends Observatory{
 	private static ArrayList<Observatory> ObList = new ArrayList<Observatory>();
 	
 	/**
-	 * A method that returns the observatory with the largest average "galamsey" colour value. 
+	 * A method that returns the observatory with the largest average Galamsey colour value.
 	 * @return
 	 */
 	public static Observatory hiObAvg () {
@@ -36,8 +38,7 @@ public class Monitoring extends Observatory{
 	}
 	
 	/**
-	 * A method that returns the largest "galamsey" colour ever recorded
-	 * in all the observatories.
+	 * A method that returns the largest Galamsey colour value ever recorded in all the observatories.
 	 * @return
 	 */
 	public static int maxValEver() {
@@ -54,8 +55,8 @@ public class Monitoring extends Observatory{
 	}
 	
 	/**
-	 * A method that takes in a given number and returns a list of all "galamsey"
-	 * recorded in all observatories with a colour value greater than the given number.
+	 * A method that takes in a given number and returns a list of all Galamsey events
+	 * recorded in all observatories with a colour value greater than a given number.
 	 *
 	 * @param num
 	 * @return

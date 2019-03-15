@@ -19,7 +19,7 @@ public class MonitoringIO extends Monitoring{
 				+ "\nThe area covered by the Observatory in square kilometers");
 		
 		Scanner input = new Scanner(System.in);
-		String obdata =input.nextLine();
+		String obdata = input.nextLine();
 		
 		String[] ob = obdata.split(",");
 		new Observatory(ob[0], ob[1], Integer.parseInt(ob[2]), Double.parseDouble(ob[3]));

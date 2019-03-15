@@ -1,6 +1,6 @@
 /**
- * A class called Observatory that stores and retrieves information about
- * observatories that monitor different galamsey events.
+ * A class called Observatory that extends properties and methods of the Galamsey class.
+ * It stores and retrieves information about observatories that monitor different Galamsey events.
  */
 
 package project;
@@ -17,7 +17,7 @@ public class Observatory extends Galamsey {
 	/**
 	 * Instance variables for observatory name (obName), observatory country (obCount),
 	 * observatory year (obYear), observatory area (in square kilometres), and a list
-	 * of galamsey events.
+	 * of Galamsey events.
 	 */
 
 	private String obName;
@@ -27,14 +27,15 @@ public class Observatory extends Galamsey {
 	private ArrayList<Galamsey> events;
 	
 	/**
-	 * A default constructor
+	 * A default constructor that creates an empty observatory.
 	 */
 	public Observatory() {
 		
 	}
 	
 	/**
-	 * An overloaded constructor without a list of events in case no events are recorded
+	 * An overloaded constructor without a list of events, in case there are 
+	 * no pre-existing Galamsey events when the Observatory is being created.
 	 * @param name
 	 * @param count
 	 * @param year
@@ -49,7 +50,7 @@ public class Observatory extends Galamsey {
 	}
 	
 	/**
-	 * An overloaded constructor with a list of events
+	 * An overloaded constructor that creates an observatory with a list of existing Galamsey events.
 	 * @param name
 	 * @param count
 	 * @param year
@@ -67,7 +68,7 @@ public class Observatory extends Galamsey {
 	//Accessors and Mutators
 	
 	/**
-	 * Accessor for observatory name
+	 * An accessor that returns the name of an observatory.
 	 * @return the obName
 	 */
 	public String getObName() {
@@ -75,15 +76,15 @@ public class Observatory extends Galamsey {
 	}
 
 	/**
-	 * Mutator for observatory name
-	 * @param obName the obName to set
+	 * A mutator that allows the user to change the name of a pre-existing observatory.
+	 * @param obName
 	 */
 	public void setObName(String obName) {
 		this.obName = obName;
 	}
 
 	/**
-	 * Accessor for observatory country
+	 * An accessor that returns the country in which an observatory is located.
 	 * @return the obCount
 	 */
 	public String getObCount() {
@@ -91,15 +92,15 @@ public class Observatory extends Galamsey {
 	}
 
 	/**
-	 * Mutator for observatory country
-	 * @param obCount the obCount to set
+	 * A mutator that allows the user to change the country in which an observatory is located.
+	 * @param obCount
 	 */
 	public void setObCount(String obCount) {
 		this.obCount = obCount;
 	}
 
 	/**
-	 * Accessor for observatory year
+	 * An accessor that returns the year in which Galamsey observations started for an observatory.
 	 * @return the obYear
 	 */
 	public int getObYear() {
@@ -107,15 +108,15 @@ public class Observatory extends Galamsey {
 	}
 
 	/**
-	 * Mutator for observatory year
-	 * @param obYear the obYear to set
+	 * A mutator that allows the user to change the year in which Galamsey observations started for an observatory.
+	 * @param obYear
 	 */
 	public void setObYear(int obYear) {
 		this.obYear = obYear;
 	}
 
 	/**
-	 * Accessor for observatory area
+	 * An accessor that returns the area covered by the observatory (in square kilometers).
 	 * @return the obArea
 	 */
 	public double getObArea() {
@@ -123,15 +124,15 @@ public class Observatory extends Galamsey {
 	}
 
 	/**
-	 * Mutator for observatory area
-	 * @param obArea the obArea to set
+	 * A mutator that allows the user to change the area covered by the observatory (in square kilometers).
+	 * @param obArea
 	 */
 	public void setObArea(double obArea) {
 		this.obArea = obArea;
 	}
 
 	/**
-	 * Accessor for list of events
+	 * An accessor that returns a list of Galamsey events.
 	 * @return the events
 	 */
 	public ArrayList<Galamsey> getEvents() {
@@ -139,7 +140,7 @@ public class Observatory extends Galamsey {
 	}
 	
 	/**
-	 * A method to add a Galamsey event to the observatory's list of events.
+	 * A method that allows the user to add a Galamsey event to an observatory's list of events.
 	 * @param obj
 	 */
 	public void addEvent(Galamsey obj) {
@@ -147,7 +148,7 @@ public class Observatory extends Galamsey {
 	}
 
 	/**
-	 * A method to remove a specific event from the observatory's list of events.
+	 * A method that allows a user to remove a specific event from an observatory's list of events.
 	 * @param i
 	 */
 	public void removeEvent(int i) {
@@ -155,7 +156,7 @@ public class Observatory extends Galamsey {
 	}
 	
 	/**
-	 * A method that returns the largest Galamsey colour value recorded by the observatory
+	 * A method that returns the largest Galamsey colour value recorded by an observatory,
 	 * @return
 	 */
 	public int maxColVal() {
@@ -173,7 +174,7 @@ public class Observatory extends Galamsey {
 	}
 	
 	/**
-	 * A method that returns the average Galamsey colour value recorded by the observatory
+	 * A method that returns the average Galamsey colour value recorded by an observatory.
 	 * @return
 	 */
 	public double avgColVal() {
@@ -191,7 +192,7 @@ public class Observatory extends Galamsey {
 	}
 	
 	/**
-	 * A method that returns a list of all "galamsey" events recorded with a colour value
+	 * A method that returns a list of all Galamsey events recorded, with a colour value
 	 * greater than a given number.
 	 *  
 	 * @param num
