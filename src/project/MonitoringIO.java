@@ -19,7 +19,10 @@ public class MonitoringIO extends Monitoring{
 				+ "\nThe area covered by the Observatory in square kilometers");
 		
 		Scanner input = new Scanner(System.in);
-		String obdata = input.nextLine();
+		String obdata = "";
+		if (input.hasNextLine()) {
+			obdata = input.nextLine();
+		}
 		
 		String[] ob = obdata.split(",");
 		Observatory a = new Observatory(ob[0], ob[1], Integer.parseInt(ob[2]), Double.parseDouble(ob[3]));
@@ -37,13 +40,15 @@ public class MonitoringIO extends Monitoring{
 				+ "\nPosition of area: Longitude and latitude (sample format: 5.5862° N, 0.1752° W)"
 				+ "\nYear of event");
 		
-		Scanner obinput = new Scanner(System.in);
-		String obdata = obinput.nextLine();
+		Scanner input = new Scanner(System.in);
+		String obdata = "";
+		if (input.hasNextLine()) {
+			obdata = input.nextLine();
+		}
 		
 		String[] obArray = obdata.split(",");
 		new Galamsey(obArray[0], Double.parseDouble(obArray[1]), Double.parseDouble(obArray[2]), Integer.parseInt(obArray[3]));
 		
-		obinput.close();
 		start();
 	}
 	
@@ -55,7 +60,10 @@ public class MonitoringIO extends Monitoring{
 				+ "\ngivenList: To get all Galamsey with colour value greater than a given number");
 		
 		Scanner input = new Scanner(System.in);
-		String task = input.nextLine();
+		String task = "";
+		if (input.hasNextLine()) {
+			task = input.nextLine();
+		}
 		
 		switch(task) {
 		case "hiObAvg" : 
@@ -91,23 +99,23 @@ public class MonitoringIO extends Monitoring{
 				+ "\nexit: To end the program");
 					
 					 
-		String task = input.nextLine();
+		String task = "";
+		if (input.hasNextLine()) {
+			task = input.nextLine();
+		}
+				
 			
 		switch(task) {
 		case "enob" : 
-			input.close();
 			enob();
 			break;
 		case "engal" :
-			input.close();
 			engal();
 			break;
 		case "stats" :
-			input.close();
 			stats();
 			break;
 		case "exit" :
-			input.close();
 			exit();
 			break;
 		}
