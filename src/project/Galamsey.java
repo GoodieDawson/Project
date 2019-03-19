@@ -16,7 +16,7 @@ public class Galamsey {
 	 * A position class that takes the longitude and latitude of the Galamsey area
 	 * Sample format is: 5.5862° N, 0.1752° W (the angle in degrees followed by the direction)
 	 */
-	private class Position {
+	public class Position {
 		private double lon;
 		private double lat;
 		
@@ -28,6 +28,35 @@ public class Galamsey {
 		 */
 		private Position(double lon, double lat) {
 			this.lon = lon;
+			this.lat = lat;
+			
+		}
+
+		/**
+		 * @return the lon
+		 */
+		public double getLon() {
+			return lon;
+		}
+
+		/**
+		 * @param lon the lon to set
+		 */
+		public void setLon(double lon) {
+			this.lon = lon;
+		}
+
+		/**
+		 * @return the lat
+		 */
+		public double getLat() {
+			return lat;
+		}
+
+		/**
+		 * @param lat the lat to set
+		 */
+		public void setLat(double lat) {
 			this.lat = lat;
 		}
 

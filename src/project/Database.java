@@ -30,6 +30,9 @@ public class Database {
 				System.out.println(rs.getString("galamseyid") + "," + rs.getString("vegcol"));
 			}
 			
+			rs.close();
+			stmnt.close();
+			con.close();
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
