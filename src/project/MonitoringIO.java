@@ -1,5 +1,7 @@
 /**
- * 
+ * A class called MonitoringIO with a main method that provides the user with a menu of features
+ * for entering observatory data, entering galamsey data, providing monitoring statistics and exit the menu.
+ * It takes user input and allows the user to input via the console, the details of the observatory and Galamsey. 
  */
 package project;
 
@@ -11,14 +13,20 @@ import java.util.Scanner;
  */
 public class MonitoringIO extends Monitoring{
 
+	/**
+	 * A method that prompts the user to input details for one observatory and
+	 * creates an object of the Observatory class with those details.
+	 */
 	public static void enob () {
 		System.out.println("Please enter the following details in this order about your Obsevatory event, separated by commas:"
+				+ "\nThe country in which the Obsevartory is based"
 				+ "\nName of the Obsevartory"
 				+ "\nThe country in which the Obsevartory is based"
 				+ "\nThe Year in which observations began"
 				+ "\nThe area covered by the Observatory in square kilometers");
 		
 		Scanner input = new Scanner(System.in);
+
 		String obdata = "";
 		if (input.hasNextLine()) {
 			obdata = input.nextLine();
@@ -54,9 +62,13 @@ public class MonitoringIO extends Monitoring{
 	
 	public static void stats () {
 		
+		/**
+		 * A method that prompts the user to input a word to get details on the observatory
+		 * with the largest average Galamsey colour value 
+		 */
 		System.out.println("\nPlease find below a list of inputs for your stats actions:"
-				+ "\nhiObAvg: To Get the Observatory with the largest average galamsey colour value"
-				+ "\nmaxValEver: To get The largest Galamsey colour value ever recorded"
+				+ "\nhiObAvg: To get the Observatory with the largest average Galamsey colour value"
+				+ "\nmaxValEver: To get the largest Galamsey colour value ever recorded"
 				+ "\ngivenList: To get all Galamsey with colour value greater than a given number");
 		
 		Scanner input = new Scanner(System.in);
@@ -98,27 +110,22 @@ public class MonitoringIO extends Monitoring{
 				+ "\nstats: To view certain monitoring statistics about the recorded data"
 				+ "\nexit: To end the program");
 					
-					 
-		String task = "";
-		if (input.hasNextLine()) {
-			task = input.nextLine();
-		}
-				
+			String task = input.nextLine();
 			
-		switch(task) {
-		case "enob" : 
-			enob();
-			break;
-		case "engal" :
-			engal();
-			break;
-		case "stats" :
-			stats();
-			break;
-		case "exit" :
-			exit();
-			break;
-		}
+			switch(task) {
+			case "enob" : 
+				enob();
+				break;
+			case "engal" : 
+				engal();
+				break;
+			case "stats" : 
+				stats();
+				break;
+			case "exit" : 
+				exit();
+				break;
+			}
 
 	}
 		

@@ -259,3 +259,4 @@ public class Galamsey {
 	}
 
 }
+>>>>>>> branch 'master' of https://github.com/GoodieDawson/Project.git
