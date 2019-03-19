@@ -45,10 +45,10 @@ public class Galamsey_Controller {
     private TableColumn<Galamsey, String> colVal;
 
     @FXML
-    private TableColumn<Galamsey.Position, String> lon;
+    private TableColumn<Galamsey, String> lon;
 
     @FXML
-    private TableColumn<Galamsey.Position, String> lat;
+    private TableColumn<Galamsey, String> lat;
 
     @FXML
     private TableColumn<Galamsey, String> year;

@@ -82,6 +82,8 @@ public class Galamsey {
 	private Position pos;
 	private int year;
 	private int id;
+	private double lon;
+	private double lat;
 
 	public int getId() {
 		return id;
@@ -121,6 +123,8 @@ public class Galamsey {
 		}
 		this.pos = new Position(lon, lat);
 		this.year = year;
+		this.lon = lon;
+		this.lat = lat;
 	}
 
 	public Galamsey(int id, String vegCol, double lon, double lat, int year) {
@@ -139,8 +143,26 @@ public class Galamsey {
 		this.pos = new Position(lon, lat);
 		this.year = year;
 		this.id = id;
+		this.lon = lon;
+		this.lat = lat;
 	}
-	
+
+	public double getLon() {
+		return lon;
+	}
+
+	public void setLon(double lon) {
+		this.lon = lon;
+	}
+
+	public double getLat() {
+		return lat;
+	}
+
+	public void setLat(double lat) {
+		this.lat = lat;
+	}
+
 	// Accessors and Mutators
 	/**
 	 * This accessor returns the vegetation colour of the area of the Galamsey event
@@ -259,4 +281,3 @@ public class Galamsey {
 	}
 
 }
->>>>>>> branch 'master' of https://github.com/GoodieDawson/Project.git

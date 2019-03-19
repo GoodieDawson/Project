@@ -21,7 +21,7 @@ public class Main_Menu_Controller {
 
     @FXML
     void Exit(ActionEvent event) {
-
+        System.exit(0);
     }
 
     @FXML
