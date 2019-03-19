@@ -81,7 +81,16 @@ public class Galamsey {
 	private int colVal;
 	private Position pos;
 	private int year;
-	
+	private int id;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	/**
 	 * A default constructor for Galamsey class
 	 */
@@ -100,7 +109,7 @@ public class Galamsey {
 	public Galamsey(String vegCol, double lon, double lat, int year) {
 		this.vegCol = VegCol.valueOf(vegCol);
 		switch(this.vegCol) {
-			case Green : 
+			case Green :
 				this.colVal = 1;
 				break;
 			case Yellow : 
@@ -112,6 +121,24 @@ public class Galamsey {
 		}
 		this.pos = new Position(lon, lat);
 		this.year = year;
+	}
+
+	public Galamsey(int id, String vegCol, double lon, double lat, int year) {
+		this.vegCol = VegCol.valueOf(vegCol);
+		switch(this.vegCol) {
+			case Green :
+				this.colVal = 1;
+				break;
+			case Yellow :
+				this.colVal = 2;
+				break;
+			case Brown :
+				this.colVal = 3;
+				break;
+		}
+		this.pos = new Position(lon, lat);
+		this.year = year;
+		this.id = id;
 	}
 	
 	// Accessors and Mutators
@@ -228,23 +255,7 @@ public class Galamsey {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Galamsey a = new Galamsey("Green", 4, 9, 2019);
-		Galamsey b = new Galamsey("Green", 4, 9, 2019);
-		System.out.println(a.equals(b));
-		
-		System.out.println(a.getVegCol());
-		System.out.println(a.getColVal());
-		System.out.println(a.getPos());
-		System.out.println(a.getYear());
-		
-		a.setVegCol("Brown");
-		System.out.println(a.getVegCol());
-		System.out.println(a.getColVal());
-		a.setPos(77, 55);
-		System.out.println(a.getPos());
-		a.setYear(2018);
-		System.out.println(a.getYear());
-		System.out.println(a.toString());
+
 	}
 
 }
