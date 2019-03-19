@@ -31,7 +31,7 @@ public class Add_Galamsey_Controller {
     void AddGalamsey(ActionEvent event) {
     	try {
 			//1. Creating Connection
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/galamseydb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "Blakestake7*");
+			Connection con = Database.startCon();
 			
 			//2. Creating Statement
 			Statement stmnt = con.createStatement();

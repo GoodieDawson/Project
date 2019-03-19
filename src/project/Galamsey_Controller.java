@@ -66,7 +66,7 @@ public class Galamsey_Controller {
     	
     	try {
 			//1. Creating Connection
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/galamseydb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "Blakestake7*");
+			Connection con = Database.startCon();
 			
 			//2. Creating Statement
 			Statement stmnt = con.createStatement();
@@ -110,4 +110,28 @@ public class Galamsey_Controller {
     	primaryStage.setScene(scene);
     	primaryStage.show();
     }
+
+	@FXML
+	void removeGalam(ActionEvent event) {
+		Galamsey selectedItem = galtable.getSelectionModel().getSelectedItem();
+		galtable.getItems().remove(selectedItem);
+
+		try {
+			//1. Creating Connection
+			Connection con = Database.startCon();
+
+			//2. Creating Statement
+			Statement stmnt = con.createStatement();
+
+			//3. Execute Query
+			Galamsey obj = galtable.getSelectionModel().getSelectedItem();
+			stmnt.executeUpdate("delete from galamsey where (galamId = " +obj.getId()+ ")");
+
+			stmnt.close();
+			con.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
