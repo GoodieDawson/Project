@@ -12,7 +12,7 @@ import java.sql.*;
 public class Database {
 
 	/**
-	 *
+	 *Connection Method
 	 */
 	public static Connection startCon() throws SQLException {
 
