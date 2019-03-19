@@ -200,23 +200,7 @@ public class Galamsey {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Galamsey a = new Galamsey("Green", 4, 9, 2019);
-		Galamsey b = new Galamsey("Green", 4, 9, 2019);
-		System.out.println(a.equals(b));
 		
-		System.out.println(a.getVegCol());
-		System.out.println(a.getColVal());
-		System.out.println(a.getPos());
-		System.out.println(a.getYear());
-		
-		a.setVegCol("Brown");
-		System.out.println(a.getVegCol());
-		System.out.println(a.getColVal());
-		a.setPos(77, 55);
-		System.out.println(a.getPos());
-		a.setYear(2018);
-		System.out.println(a.getYear());
-		System.out.println(a.toString());
 	}
 
 }

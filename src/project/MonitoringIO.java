@@ -1,5 +1,7 @@
 /**
- * 
+ * A class called MonitoringIO with a main method that provides the user with a menu of features
+ * for entering observatory data, entering galamsey data, providing monitoring statistics and exit the menu.
+ * It takes user input and allows the user to input via the console, the details of the observatory and Galamsey. 
  */
 package project;
 
@@ -11,9 +13,13 @@ import java.util.Scanner;
  */
 public class MonitoringIO extends Monitoring{
 
+	/**
+	 * A method that prompts the user to input details for one observatory and
+	 * creates an object of the Observatory class with those details.
+	 */
 	public static void enob () {
 		System.out.println("Please enter the following details in this order about your Obsevatory event, separated by commas:"
-				+ "The country in which the Obsevartory is based"
+				+ "\nThe country in which the Obsevartory is based"
 				+ "\nName of the Obsevartory"
 				+ "\nThe Year in which observations began"
 				+ "\nThe area covered by the Observatory in square kilometers");
@@ -50,9 +56,13 @@ public class MonitoringIO extends Monitoring{
 	
 	public static void stats () {
 		
+		/**
+		 * A method that prompts the user to input a word to get details on the observatory
+		 * with the largest average Galamsey colour value 
+		 */
 		System.out.println("\nPlease find below a list of inputs for your stats actions:"
-				+ "\nhiObAvg: To Get the Observatory with the largest average galamsey colour value"
-				+ "\nmaxValEver: To get The largest Galamsey colour value ever recorded"
+				+ "\nhiObAvg: To get the Observatory with the largest average Galamsey colour value"
+				+ "\nmaxValEver: To get the largest Galamsey colour value ever recorded"
 				+ "\ngivenList: To get all Galamsey with colour value greater than a given number");
 		
 		Scanner input = new Scanner(System.in);
@@ -109,7 +119,6 @@ public class MonitoringIO extends Monitoring{
 				exit();
 				break;
 			}
-
 		}
 	}
 		
