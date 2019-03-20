@@ -10,13 +10,13 @@
    <children>
       <Pane layoutX="52.0" layoutY="42.0" prefHeight="316.0" prefWidth="507.0" style="-fx-background-color: #FFFFFF;">
          <children>
-            <Button layoutX="259.0" layoutY="211.0" mnemonicParsing="false" onAction="#Exit" prefHeight="27.0" prefWidth="126.0" text="Exit" />
-            <Button layoutX="259.0" layoutY="158.0" mnemonicParsing="false" onAction="#loadObservatory" prefHeight="27.0" prefWidth="126.0" text="Observatory" />
-            <Button layoutX="130.0" layoutY="211.0" mnemonicParsing="false" onAction="#loadStatistics" prefHeight="27.0" prefWidth="119.0" text="Statistics" />
-            <Button layoutX="130.0" layoutY="158.0" mnemonicParsing="false" onAction="#opengalam" prefHeight="27.0" prefWidth="119.0" style="-fx-background-color: #80B4B4; -fx-border-color: #406165; -fx-background-insets: 0; -fx-border-radius: 20;" text="Galamsey" textFill="WHITE" />
-            <Label layoutX="124.0" layoutY="44.0" prefHeight="47.0" prefWidth="260.0" text="Galamsey Monitoring System" textAlignment="CENTER">
+            <Button layoutX="372.0" layoutY="194.0" mnemonicParsing="false" onAction="#Exit" prefHeight="29.0" prefWidth="113.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" text="Exit" textFill="WHITE" />
+            <Button layoutX="372.0" layoutY="144.0" mnemonicParsing="false" onAction="#loadObservatory" prefHeight="29.0" prefWidth="113.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" text="Observatory" textFill="WHITE" />
+            <Button layoutX="254.0" layoutY="194.0" mnemonicParsing="false" onAction="#loadStatistics" prefHeight="29.0" prefWidth="105.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" text="Statistics" textFill="WHITE" />
+            <Button layoutX="254.0" layoutY="144.0" mnemonicParsing="false" onAction="#opengalam" prefHeight="29.0" prefWidth="105.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" text="Galamsey" textFill="WHITE" />
+            <Label layoutX="276.0" layoutY="41.0" lineSpacing="2.0" prefHeight="47.0" prefWidth="192.0" text="GALAMSEY MONITORING SYSTEM" textAlignment="CENTER" textFill="#323232" wrapText="true">
                <font>
-                  <Font name="Baskerville" size="18.0" />
+                  <Font name="SansSerif Bold" size="14.0" />
                </font>
             </Label>
          </children>
