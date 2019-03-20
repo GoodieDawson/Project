@@ -7,19 +7,18 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #80B4B4;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.Main_Menu_Controller">
-   <children>
-      <Pane layoutX="52.0" layoutY="42.0" prefHeight="316.0" prefWidth="507.0" style="-fx-background-color: #FFFFFF;">
-         <children>
-            <Button layoutX="372.0" layoutY="194.0" mnemonicParsing="false" onAction="#Exit" prefHeight="29.0" prefWidth="113.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" text="Exit" textFill="WHITE" />
-            <Button layoutX="372.0" layoutY="144.0" mnemonicParsing="false" onAction="#loadObservatory" prefHeight="29.0" prefWidth="113.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" text="Observatory" textFill="WHITE" />
-            <Button layoutX="254.0" layoutY="194.0" mnemonicParsing="false" onAction="#loadStatistics" prefHeight="29.0" prefWidth="105.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" text="Statistics" textFill="WHITE" />
-            <Button layoutX="254.0" layoutY="144.0" mnemonicParsing="false" onAction="#opengalam" prefHeight="29.0" prefWidth="105.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" text="Galamsey" textFill="WHITE" />
-            <Label layoutX="276.0" layoutY="41.0" lineSpacing="2.0" prefHeight="47.0" prefWidth="192.0" text="GALAMSEY MONITORING SYSTEM" textAlignment="CENTER" textFill="#323232" wrapText="true">
-               <font>
-                  <Font name="SansSerif Bold" size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-   </children>
+   <Pane layoutX="52.0" layoutY="42.0" prefHeight="316.0" prefWidth="507.0" style="-fx-background-color: #FFFFFF;">
+      <Button layoutX="372.0" layoutY="194.0" mnemonicParsing="false" onAction="#Exit" prefHeight="29.0" prefWidth="113.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" styleClass="text" stylesheets="@resources/style.css" text="Exit" textFill="WHITE" />
+      <Button layoutX="372.0" layoutY="144.0" mnemonicParsing="false" onAction="#loadObservatory" prefHeight="29.0" prefWidth="113.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" styleClass="text" stylesheets="@resources/style.css" text="Observatory" textFill="WHITE">
+         <font>
+            <Font name="BPreplay" size="13.0" />
+         </font></Button>
+      <Button layoutX="254.0" layoutY="194.0" mnemonicParsing="false" onAction="#loadStatistics" prefHeight="29.0" prefWidth="105.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" styleClass="text" stylesheets="@resources/style.css" text="Statistics" textFill="WHITE" />
+      <Button layoutX="254.0" layoutY="144.0" mnemonicParsing="false" onAction="#opengalam" prefHeight="29.0" prefWidth="105.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" styleClass="text" stylesheets="@resources/style.css" text="Galamsey" textFill="WHITE" />
+      <Label layoutX="276.0" layoutY="41.0" lineSpacing="2.0" prefHeight="47.0" prefWidth="192.0" styleClass="text" stylesheets="@resources/style.css" text="GALAMSEY MONITORING SYSTEM" textAlignment="CENTER" textFill="#323232" wrapText="true">
+         <font>
+            <Font name="BPreplay" size="14.0" />
+         </font>
+      </Label>
+   </Pane>
 </AnchorPane>

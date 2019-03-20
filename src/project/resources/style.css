@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'BPreplay';
+}
+
+.text {
+    -fx-font-family: 'BPreplay';
+}
