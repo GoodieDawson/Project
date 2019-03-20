@@ -91,6 +91,7 @@ public class Add_Galamsey_Controller {
 			lattxtbx.clear();
 			yrtxtbx.clear();
 			chcbx.setValue(null);
+			chcbx2.setValue(null);
 
 			//add popup stuff here
 			

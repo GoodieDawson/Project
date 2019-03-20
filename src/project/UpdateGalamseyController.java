@@ -20,7 +20,7 @@ import java.sql.Statement;
 public class UpdateGalamseyController {
 
     @FXML
-    private TextField vegcoltxtbx;
+    private ChoiceBox<String> vegcolchcbx;
 
     @FXML
     private TextField lattxtbx;
@@ -34,13 +34,16 @@ public class UpdateGalamseyController {
     @FXML
     private ChoiceBox<String> chcbx;
 
+    @FXML
+    private ChoiceBox<String> chcbx2;
+
     ObservableList<String> list = FXCollections.observableArrayList();
+    ObservableList<String> list2 = FXCollections.observableArrayList("Green", "Yellow", "Brown");
 
     private int id;
     @FXML
     void initialize(int galamId, String vegCol, double lat,double lon, int year) {
         id = galamId;
-        vegcoltxtbx.setText(vegCol);
         lattxtbx.setText(String.valueOf(lat));
         lontxtbx.setText(String.valueOf(lon));
         yrtxtbx.setText(String.valueOf(year));
@@ -69,6 +72,8 @@ public class UpdateGalamseyController {
         }
 
         chcbx.setItems(list);
+        chcbx2.setItems(list2);
+
 
     }
     @FXML
@@ -82,7 +87,7 @@ public class UpdateGalamseyController {
 
             //3. Execute Query
             if (chcbx.getValue() == null) {chcbx.setValue("0");}
-            Galamsey obj = new Galamsey (vegcoltxtbx.getText(),
+            Galamsey obj = new Galamsey (vegcolchcbx.getValue(),
                     Double.parseDouble(lontxtbx.getText()),
                     Double.parseDouble(lattxtbx.getText()),
                     Integer.parseInt(yrtxtbx.getText()),
@@ -95,7 +100,7 @@ public class UpdateGalamseyController {
         catch (Exception e) {
             e.printStackTrace();
         }
-        vegcoltxtbx.clear();
+        vegcolchcbx.setValue(null);
         lontxtbx.clear();
         lattxtbx.clear();
         yrtxtbx.clear();
