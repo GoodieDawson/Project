@@ -74,10 +74,13 @@ public class Statistics_Controller {
     @FXML
     private TextField txtbx1;
 
+    @FXML
+    private TextField txtbx2;
+
     ObservableList<Observatory> list1 = FXCollections.observableArrayList();
     ObservableList<Galamsey> list2 = FXCollections.observableArrayList();
     ObservableList<String> list3 = FXCollections.observableArrayList("Largest Value", "Average Value", "Galamsey List", "Observatory: Largest Average");
-    ObservableList<String> list4 = FXCollections.observableArrayList();
+    ObservableList<String> list4 = FXCollections.observableArrayList("Largest Value", "Above");
 
     @FXML
     private void initialize() {
@@ -144,6 +147,8 @@ public class Statistics_Controller {
             e.printStackTrace();
         }
 
+        chbx2.setItems(list4);
+        txtbx2.setText(null);
         galtable.setItems(list2);
     }
 
@@ -158,7 +163,7 @@ public class Statistics_Controller {
     }
 
     @FXML
-    void largestValue () {
+    void obLargestValue () {
 
         int max = 0;
 
@@ -293,10 +298,63 @@ public class Statistics_Controller {
     }
 
     @FXML
+    void galLargestValue() {
+        int max = 0;
+
+        try {
+            //1. Creating Connection
+            Connection con = Database.startCon();
+
+            //2. Creating Statement
+            Statement stmnt = con.createStatement();
+
+            //3. Execute Query
+            ResultSet rs = stmnt.executeQuery("select * from galamsey");
+
+            while (rs.next()) {
+                if (max < Integer.parseInt(rs.getString("colVal"))) {max = Integer.parseInt(rs.getString("colVal"));}
+            }
+
+            stmnt.close();
+            con.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        result2.setText(String.valueOf(max));
+    }
+
+    @FXML
+    void above(int x) {
+        galtable.getItems().clear();
+        try {
+            //1. Creating Connection
+            Connection con = Database.startCon();
+
+            //2. Creating Statement
+            Statement stmnt = con.createStatement();
+
+            //3. Execute Query
+            ResultSet rs = stmnt.executeQuery("select * from galamsey where colVal > " +x);
+            while (rs.next()) {
+                list2.add(new Galamsey (Integer.parseInt(rs.getString("galamId")), rs.getString("vegCol"), Double.parseDouble(rs.getString("longitude")),Double.parseDouble(rs.getString("latitude")),Integer.parseInt(rs.getString("year"))));
+            }
+
+            stmnt.close();
+            con.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        galtable.setItems(list2);
+    }
+
+    @FXML
     void obStatNav(ActionEvent event) {
         switch(chbx1.getValue()) {
             case "Largest Value" :
-                largestValue();
+                obLargestValue();
                 break;
             case "Average Value" :
                 averageValue();
@@ -316,6 +374,15 @@ public class Statistics_Controller {
     @FXML
     void galStatNav(ActionEvent event) {
         switch(chbx2.getValue().toString()) {
+            case "Largest Value" :
+                galLargestValue();
+                break;
+            case "Above" :
+                if (txtbx2.getText() == null) {txtbx2.setText("0");}
+                above(Integer.parseInt(txtbx2.getText()));
+                txtbx2.setText("");
+                break;
+
 
         }
     }
