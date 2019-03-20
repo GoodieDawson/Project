@@ -1,21 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.AddObservatoryController">
-   <children>
-      <Button layoutX="298.0" layoutY="282.0" mnemonicParsing="false" onAction="#addObservatory" text="Add" />
-      <Label layoutX="163.0" layoutY="91.0" text="Name " />
-      <TextField fx:id="nmetxtbx" layoutX="355.0" layoutY="87.0" />
-      <Label layoutX="163.0" layoutY="137.0" text="Country" />
-      <TextField fx:id="yrtxtbx" layoutX="355.0" layoutY="175.0" />
-      <TextField fx:id="countxtbx" layoutX="355.0" layoutY="133.0" />
-      <TextField fx:id="areatxtbx" layoutX="355.0" layoutY="226.0" />
-      <Label layoutX="168.0" layoutY="179.0" text="Year" />
-      <Label layoutX="168.0" layoutY="230.0" text="Area" />
-      <Button layoutX="284.0" layoutY="350.0" mnemonicParsing="false" onAction="#loadObservatory" text="Back" />
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="683.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.AddObservatoryController">
+   <Pane layoutX="35.0" layoutY="28.0" prefHeight="388.0" prefWidth="640.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-border-radius: 5; -fx-background-insets: 0; -fx-border-color: #FFFFFF;" styleClass="pane" stylesheets="@resources/style.css">
+      <Label layoutX="253.0" layoutY="85.0" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-border-radius: 20; -fx-background-insets: 0; -fx-border-color: #FFFFFF;" styleClass="text" stylesheets="@resources/style.css" text="Name" textAlignment="CENTER" textFill="#55a5a6">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="253.0" layoutY="138.0" prefHeight="27.0" prefWidth="90.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-border-radius: 20; -fx-background-insets: 0; -fx-border-color: #FFFFFF;" styleClass="text" stylesheets="@resources/style.css" text="Country" textFill="#55a5a6" />
+      <TextField fx:id="countxtbx" layoutX="353.0" layoutY="137.0" promptText="Country" stylesheets="@resources/style.css">
+         <styleClass>
+            <String fx:value="text" />
+            <String fx:value="text-field" />
+         </styleClass>
+      </TextField>
+      <Label layoutX="253.0" layoutY="264.0" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-border-radius: 20; -fx-background-insets: 0; -fx-border-color: #FFFFFF;" styleClass="text" stylesheets="@resources/style.css" text="Area" textFill="#55a5a6" />
+      <TextField fx:id="areatxtbx" layoutX="347.0" layoutY="265.0" promptText="Area" styleClass="text" stylesheets="@resources/style.css" />
+      <Label layoutX="253.0" layoutY="196.0" prefHeight="27.0" prefWidth="57.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-border-radius: 20; -fx-background-insets: 0; -fx-border-color: #FFFFFF;" styleClass="text" stylesheets="@resources/style.css" text="Year" textAlignment="CENTER" textFill="#55a5a6" />
+      <TextField fx:id="yrtxtbx" layoutX="353.0" layoutY="195.0" promptText="Year" styleClass="text" stylesheets="@resources/style.css" />
+      <Button alignment="CENTER" layoutX="433.0" layoutY="339.0" mnemonicParsing="false" onAction="#addObservatory" prefHeight="28.0" prefWidth="74.0" style="-fx-background-color: #80B4B4; -fx-background-radius: 20; -fx-border-radius: 20; -fx-background-insets: 0; -fx-border-color: #FFFFFF;" text="Add" textFill="WHITE" />
+      <Button alignment="CENTER" layoutX="336.0" layoutY="339.0" mnemonicParsing="false" onAction="#loadObservatory" prefHeight="28.0" prefWidth="82.0" style="-fx-background-color: #80B4B4; -fx-background-radius: 20; -fx-border-radius: 20; -fx-background-insets: 0; -fx-border-color: #FFFFFF;" text="Back" textFill="WHITE" />
+      <Pane layoutX="-23.0" layoutY="-10.0" prefHeight="408.0" prefWidth="173.0" style="-fx-background-color: #80B4B4; -fx-background-radius: 5; -fx-border-radius: 5; -fx-background-insets: 0; -fx-border-color: #55A5A6;" styleClass="pane" stylesheets="@resources/style.css">
+         <Label layoutX="10.0" layoutY="23.0" prefHeight="93.0" prefWidth="157.0" styleClass="text" stylesheets="@resources/style.css" text="Add Observatory" textFill="WHITE" wrapText="true">
+            <font>
+               <Font size="24.0" />
+            </font>
+         </Label>
+      </Pane>
+      <Label layoutX="189.0" layoutY="42.0" prefHeight="27.0" prefWidth="232.0" styleClass="text" stylesheets="@resources/style.css" text="Please fill in the follwing details:" textFill="#80b4b4">
+         <font>
+            <Font name="System Italic" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nmetxtbx" layoutX="353.0" layoutY="85.0" promptText="Name" stylesheets="@resources/style.css">
+         <styleClass>
+            <String fx:value="text" />
+            <String fx:value="text-field" />
+         </styleClass>
+      </TextField>
+   </Pane>
 </AnchorPane>
