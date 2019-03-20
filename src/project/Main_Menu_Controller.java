@@ -45,6 +45,7 @@ public class Main_Menu_Controller {
     }
 
     @FXML
+    //comment
     void loadObservatory(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Observatory.fxml"));
         Scene scene = new Scene(root);
