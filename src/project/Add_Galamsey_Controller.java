@@ -19,9 +19,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class Add_Galamsey_Controller {
-	
-    @FXML
-    private TextField vegcoltxtbx;
 
     @FXML
     private TextField lattxtbx;
@@ -35,7 +32,12 @@ public class Add_Galamsey_Controller {
 	@FXML
 	private ChoiceBox<String> chcbx;
 
+	@FXML
+	private ChoiceBox<String> chcbx2;
+
 	ObservableList<String> list = FXCollections.observableArrayList();
+
+	ObservableList<String> list2 = FXCollections.observableArrayList("Green", "Yellow", "Brown");
 
 	@FXML
 	void initialize () {
@@ -63,6 +65,7 @@ public class Add_Galamsey_Controller {
 		}
 
 		chcbx.setItems(list);
+		chcbx2.setItems(list2);
 	}
 
     @FXML
@@ -76,15 +79,14 @@ public class Add_Galamsey_Controller {
 					
 			//3. Execute Query
 			if (chcbx.getValue() == null) {chcbx.setValue("0");}
-			Galamsey obj = new Galamsey (vegcoltxtbx.getText(), 
+			Galamsey obj = new Galamsey (chcbx2.getValue(),
 					Double.parseDouble(lontxtbx.getText()), 
 					Double.parseDouble(lattxtbx.getText()),
 					Integer.parseInt(yrtxtbx.getText()),
 					Integer.parseInt(chcbx.getValue()));
 			
 			stmnt.executeUpdate("INSERT INTO galamsey (vegCol, colVal, longitude, latitude, year, obId) VALUES ('" +obj.getVegCol()+ "', " +obj.getColVal()+", "+obj.getLon()+ ", " +obj.getLat()+ ", " +obj.getYear()+ ", " +obj.getObId()+ ")");
-			
-			vegcoltxtbx.clear();
+
 			lontxtbx.clear();
 			lattxtbx.clear();
 			yrtxtbx.clear();

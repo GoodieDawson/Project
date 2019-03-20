@@ -10,7 +10,6 @@
    <children>
       <Button layoutX="269.0" layoutY="305.0" mnemonicParsing="false" onAction="#AddGalamsey" text="Add" />
       <Label layoutX="153.0" layoutY="81.0" text="Vegetation Colour" />
-      <TextField fx:id="vegcoltxtbx" layoutX="345.0" layoutY="77.0" />
       <Label layoutX="153.0" layoutY="127.0" text="Position" />
       <TextField fx:id="lattxtbx" layoutX="345.0" layoutY="165.0" />
       <TextField fx:id="lontxtbx" layoutX="345.0" layoutY="123.0" />
@@ -21,5 +20,6 @@
       <Button layoutX="268.0" layoutY="342.0" mnemonicParsing="false" onAction="#loadGalamsey" text="Back" />
       <Label layoutX="151.0" layoutY="269.0" text="Observatory" />
       <ChoiceBox fx:id="chcbx" layoutX="344.0" layoutY="265.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="chcbx2" layoutX="344.0" layoutY="77.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
