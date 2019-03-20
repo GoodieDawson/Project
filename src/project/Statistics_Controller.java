@@ -69,11 +69,14 @@ public class Statistics_Controller {
     private Label result1;
 
     @FXML
+    private Label result2;
+
+    @FXML
     private TextField txtbx1;
 
     ObservableList<Observatory> list1 = FXCollections.observableArrayList();
     ObservableList<Galamsey> list2 = FXCollections.observableArrayList();
-    ObservableList<String> list3 = FXCollections.observableArrayList("Largest Value", "Average Value", "Galamsey List");
+    ObservableList<String> list3 = FXCollections.observableArrayList("Largest Value", "Average Value", "Galamsey List", "Observatory: Largest Average");
     ObservableList<String> list4 = FXCollections.observableArrayList();
 
     @FXML
@@ -244,6 +247,52 @@ public class Statistics_Controller {
     }
 
     @FXML
+    void obLargestAverage() {
+        obTable.getItems().clear();
+        int sum = 0;
+        int count = 0;
+        double avg = 0;
+        int avgId = 0;
+
+        try {
+            //1. Creating Connection
+            Connection con = Database.startCon();
+
+            //2. Creating Statement
+            Statement stmnt1 = con.createStatement();
+            Statement stmnt2 = con.createStatement();
+
+            //3. Execute Query
+            ResultSet rs1 = stmnt1.executeQuery("select * from observatory");
+            while (rs1.next()) {
+                ResultSet rs2 = stmnt2.executeQuery("select * from galamsey where obId = " + rs1.getString("obId"));
+                while (rs2.next()) {
+                    sum = sum + Integer.parseInt(rs2.getString("colVal"));
+                    count++;
+                }
+
+                if (avg < (sum / count)) {
+                    avg = (sum / count);
+                    avgId = Integer.parseInt(rs1.getString("obId"));
+                }
+            }
+
+            ResultSet rs3 = stmnt1.executeQuery("select * from observatory where obId = " +avgId);
+            while (rs3.next()) {
+                list1.add(new Observatory (Integer.parseInt(rs3.getString("obId")), rs3.getString("obName"), rs3.getString("obCount"), Integer.parseInt(rs3.getString("obYear")), Double.parseDouble(rs3.getString("obArea"))));
+            }
+
+            result1.setText(String.valueOf(avg));
+            stmnt1.close();
+            con.close();
+            obTable.setItems(list1);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     void obStatNav(ActionEvent event) {
         switch(chbx1.getValue()) {
             case "Largest Value" :
@@ -255,8 +304,11 @@ public class Statistics_Controller {
             case "Galamsey List" :
                 if (txtbx1.getText() == null) {txtbx1.setText("0");}
                 galList(Integer.parseInt(txtbx1.getText()));
+                txtbx1.setText("");
                 break;
-
+            case "Observatory: Largest Average" :
+                obLargestAverage();
+                break;
 
         }
     }

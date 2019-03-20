@@ -37,5 +37,6 @@
       <Button layoutX="627.0" layoutY="413.0" mnemonicParsing="false" onAction="#galStatNav" text="Find" />
       <Label fx:id="result1" layoutX="620.0" layoutY="89.0" text="No Result" />
       <TextField fx:id="txtbx1" layoutX="572.0" layoutY="130.0" />
+      <Label fx:id="result2" layoutX="614.0" layoutY="310.0" text="No Result" />
    </children>
 </AnchorPane>
