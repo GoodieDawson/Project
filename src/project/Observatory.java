@@ -20,6 +20,7 @@ public class Observatory extends Galamsey {
 	 * of Galamsey events.
 	 */
 
+	private int obId;
 	private String obName;
 	private String obCount;
 	private int obYear;
@@ -64,9 +65,40 @@ public class Observatory extends Galamsey {
 		this.obArea = area;
 		this.events = events;
 	}
-	
+
+	/**
+	 * An overloaded constructor that creates an observatory without a list of Galamsey events.
+	 * It also has an id for the observatory.
+	 * @param name
+	 * @param count
+	 * @param year
+	 * @param area
+	 */
+	public Observatory(int obId, String name, String count, int year, double area) {
+		this.obId = obId;
+		this.obName = name;
+		this.obCount = count;
+		this.obYear = year;
+		this.obArea = area;
+	}
 	//Accessors and Mutators
-	
+
+	/**
+	 * An accessor that returns the id of an observatory.
+	 * @return the obId
+	 */
+	public int getObId() {
+		return obId;
+	}
+
+	/**
+	 * A mutator that allows the user to change the id of a pre-existing observatory.
+	 * @param obId
+	 */
+	public void setObId(int obId) {
+		this.obId = obId;
+	}
+
 	/**
 	 * An accessor that returns the name of an observatory.
 	 * @return the obName

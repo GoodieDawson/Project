@@ -8,7 +8,7 @@
    <children>
       <Button layoutX="78.0" layoutY="200.0" mnemonicParsing="false" onAction="#opengalam" text="Galamsey" />
       <Label layoutX="274.0" layoutY="33.0" text="Galamsey" />
-      <Button layoutX="484.0" layoutY="200.0" mnemonicParsing="false" text="Observatory" />
+      <Button layoutX="484.0" layoutY="200.0" mnemonicParsing="false" onAction="#loadObservatory" text="Observatory" />
       <Button layoutX="274.0" layoutY="240.0" mnemonicParsing="false" onAction="#loadStatistics" text="Statistics" />
       <Button layoutX="279.0" layoutY="308.0" mnemonicParsing="false" onAction="#Exit" text="Exit" />
    </children>
