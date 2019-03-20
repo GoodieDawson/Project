@@ -17,9 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -52,8 +50,13 @@ public class Galamsey_Controller {
 
     @FXML
     private TableColumn<Galamsey, String> year;
+
+	@FXML
+	private ChoiceBox<String> chcbx;
     
-    ObservableList<Galamsey> list = FXCollections.observableArrayList();
+    ObservableList<Galamsey> list1 = FXCollections.observableArrayList();
+
+	ObservableList<String> list2 = FXCollections.observableArrayList();
     
     @FXML
     void initialize() {
@@ -76,7 +79,7 @@ public class Galamsey_Controller {
 			
 			//4. Processing Result
 			while (rs.next()) {
-				list.add(new Galamsey (Integer.parseInt(rs.getString("galamId")), rs.getString("vegCol"), Double.parseDouble(rs.getString("longitude")),Double.parseDouble(rs.getString("latitude")),Integer.parseInt(rs.getString("year"))));
+				list1.add(new Galamsey (Integer.parseInt(rs.getString("galamId")), rs.getString("vegCol"), Double.parseDouble(rs.getString("longitude")),Double.parseDouble(rs.getString("latitude")),Integer.parseInt(rs.getString("year"))));
 			}
 			
 			rs.close();
@@ -87,7 +90,32 @@ public class Galamsey_Controller {
 			e.printStackTrace();
 		}
     	
-    	galtable.setItems(list);
+    	galtable.setItems(list1);
+
+		try {
+			//1. Creating Connection
+			Connection con = Database.startCon();
+
+			//2. Creating Statement
+			Statement stmnt = con.createStatement();
+
+			//3. Execute Query
+			ResultSet rs = stmnt.executeQuery("select * from observatory");
+
+			//4. Processing Result
+			while (rs.next()) {
+				list2.add(rs.getString("obId"));
+			}
+
+			rs.close();
+			stmnt.close();
+			con.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		chcbx.setItems(list2);
 
     }
     

@@ -70,4 +70,5 @@ public class Add_Galamsey_Controller {
     	primaryStage.setScene(scene);
     	primaryStage.show();
     }
+
 }
