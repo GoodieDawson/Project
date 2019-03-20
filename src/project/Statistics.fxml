@@ -7,17 +7,33 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.Statistics_Controller">
+<AnchorPane prefHeight="500.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.Statistics_Controller">
    <children>
-      <ChoiceBox fx:id="chbx" layoutX="234.0" layoutY="281.0" prefWidth="150.0" />
-      <Button layoutX="289.0" layoutY="334.0" mnemonicParsing="false" onAction="#statnav" text="Find" />
-      <Button layoutX="80.0" layoutY="334.0" mnemonicParsing="false" onAction="#loadMenu_Menu" text="Back" />
-      <Label layoutX="286.0" layoutY="38.0" text="Statistics" />
-      <TableView layoutX="200.0" layoutY="67.0" prefHeight="200.0" prefWidth="200.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
+      <ChoiceBox fx:id="chbx1" layoutX="572.0" layoutY="168.0" prefWidth="150.0" />
+      <Button layoutX="627.0" layoutY="205.0" mnemonicParsing="false" onAction="#obStatNav" text="Find" />
+      <Button layoutX="14.0" layoutY="460.0" mnemonicParsing="false" onAction="#loadMainMenu" text="Back" />
+      <Label layoutX="361.0" layoutY="14.0" text="Statistics" />
+      <TableView fx:id="obTable" layoutX="14.0" layoutY="60.0" prefHeight="140.0" prefWidth="538.0">
+         <columns>
+            <TableColumn fx:id="obId" prefWidth="88.0" text="ID" />
+            <TableColumn fx:id="obName" prefWidth="120.0" text="Name" />
+            <TableColumn fx:id="obCount" prefWidth="111.0" text="Country" />
+            <TableColumn fx:id="obYear" prefWidth="89.0" text="Year" />
+            <TableColumn fx:id="obArea" prefWidth="100.0" text="Area" />
+         </columns>
       </TableView>
+      <TableView fx:id="galtable" layoutX="14.0" layoutY="227.0" prefHeight="166.0" prefWidth="538.0">
+         <columns>
+            <TableColumn fx:id="galId" prefWidth="75.0" text="GalamseyID" />
+            <TableColumn fx:id="vegCol" prefWidth="107.20001220703125" text="Vegetation Colour" />
+            <TableColumn fx:id="colVal" prefWidth="95.20001220703125" text="Colour Value" />
+            <TableColumn fx:id="lon" prefWidth="66.39996337890625" text="Longitude" />
+            <TableColumn fx:id="lat" prefWidth="55.99993896484375" text="Latitude" />
+            <TableColumn fx:id="year" prefWidth="39.199951171875" text="Year" />
+         </columns>
+      </TableView>
+      <ChoiceBox fx:id="chbx2" layoutX="571.0" layoutY="360.0" prefWidth="150.0" />
+      <Button layoutX="627.0" layoutY="413.0" mnemonicParsing="false" onAction="#galStatNav" text="Find" />
+      <Label fx:id="result1" layoutX="620.0" layoutY="104.0" text="No Result" />
    </children>
 </AnchorPane>
