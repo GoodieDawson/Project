@@ -28,3 +28,7 @@
     -fx-border-width: 0 0 1 0;
     -fx-background-color: -fx-focus-color, -fx-background;
 }
+
+.vertical {
+    -fx-rotate:-90;
+}
