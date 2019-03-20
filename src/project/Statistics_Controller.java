@@ -8,10 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -71,6 +68,9 @@ public class Statistics_Controller {
     @FXML
     private Label result1;
 
+    @FXML
+    private TextField txtbx1;
+
     ObservableList<Observatory> list1 = FXCollections.observableArrayList();
     ObservableList<Galamsey> list2 = FXCollections.observableArrayList();
     ObservableList<String> list3 = FXCollections.observableArrayList("Largest Value", "Average Value", "Galamsey List");
@@ -108,6 +108,7 @@ public class Statistics_Controller {
         }
 
         chbx1.setItems(list3);
+        txtbx1.setText(null);
         obTable.setItems(list1);
 
         galId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -216,7 +217,7 @@ public class Statistics_Controller {
     }
 
     @FXML
-    void galList() {
+    void galList(int x) {
         galtable.getItems().clear();
         try {
             //1. Creating Connection
@@ -227,7 +228,7 @@ public class Statistics_Controller {
 
             //3. Execute Query
             Observatory obj = obTable.getSelectionModel().getSelectedItem();
-            ResultSet rs = stmnt.executeQuery("select * from galamsey where obId = " +obj.getObId());
+            ResultSet rs = stmnt.executeQuery("select * from galamsey where obId = " +obj.getObId()+ " and colVal > " +x);
             while (rs.next()) {
                 list2.add(new Galamsey (Integer.parseInt(rs.getString("galamId")), rs.getString("vegCol"), Double.parseDouble(rs.getString("longitude")),Double.parseDouble(rs.getString("latitude")),Integer.parseInt(rs.getString("year"))));
             }
@@ -252,7 +253,8 @@ public class Statistics_Controller {
                 averageValue();
                 break;
             case "Galamsey List" :
-                galList();
+                if (txtbx1.getText() == null) {txtbx1.setText("0");}
+                galList(Integer.parseInt(txtbx1.getText()));
                 break;
 
 

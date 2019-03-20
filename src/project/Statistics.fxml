@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="500.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.Statistics_Controller">
@@ -34,6 +35,7 @@
       </TableView>
       <ChoiceBox fx:id="chbx2" layoutX="571.0" layoutY="360.0" prefWidth="150.0" />
       <Button layoutX="627.0" layoutY="413.0" mnemonicParsing="false" onAction="#galStatNav" text="Find" />
-      <Label fx:id="result1" layoutX="620.0" layoutY="104.0" text="No Result" />
+      <Label fx:id="result1" layoutX="620.0" layoutY="89.0" text="No Result" />
+      <TextField fx:id="txtbx1" layoutX="572.0" layoutY="130.0" />
    </children>
 </AnchorPane>
