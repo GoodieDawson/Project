@@ -13,3 +13,18 @@
 .pane2 {
     -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 255, 0.5), 10, 0, 0, 0);
 }
+
+.text-field {
+    -fx-background-color: -fx-text-box-border, -fx-background;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-border-color: grey;
+    -fx-border-width: 0 0 1 0;
+}
+
+.text.field:focused {
+    -fx-border-color: #55A5A6;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: -fx-focus-color, -fx-background;
+}
