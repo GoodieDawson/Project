@@ -5,6 +5,8 @@
  */
 package project;
 
+import java.sql.Connection;
+import java.sql.Statement;
 import java.util.Scanner;
 
 /**
@@ -19,8 +21,8 @@ public class MonitoringIO extends Monitoring{
 	 */
 	public static void enob () {
 		System.out.println("Please enter the following details in this order about your Obsevatory event, separated by commas:"
-				+ "\nThe country in which the Obsevartory is based"
 				+ "\nName of the Obsevartory"
+				+ "\nThe country in which the Obsevartory is based"
 				+ "\nThe country in which the Obsevartory is based"
 				+ "\nThe Year in which observations began"
 				+ "\nThe area covered by the Observatory in square kilometers");
@@ -34,7 +36,24 @@ public class MonitoringIO extends Monitoring{
 		
 		String[] ob = obdata.split(",");
 		Observatory a = new Observatory(ob[0], ob[1], Integer.parseInt(ob[2]), Double.parseDouble(ob[3]));
-		
+		try {
+			//1. Creating Connection
+			Connection con = Database.startCon();
+
+			//2. Creating Statement
+			Statement stmnt = con.createStatement();
+
+			//3. Execute Query
+			stmnt.executeUpdate("INSERT INTO observatory (obName, obcount, obYear, obarea) VALUES ('" +a.getObName()+ "', '" +a.getObCount()+"', "+a.getObYear()+ ", " +a.getObArea()+ ")");
+
+			System.out.println("Observatory succesfully added");
+			stmnt.close();
+			con.close();
+
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 		start();
 	}
 	
@@ -55,8 +74,26 @@ public class MonitoringIO extends Monitoring{
 		}
 		
 		String[] obArray = obdata.split(",");
-		new Galamsey(obArray[0], Double.parseDouble(obArray[1]), Double.parseDouble(obArray[2]), Integer.parseInt(obArray[3]));
-		
+		Galamsey a = new Galamsey(obArray[0], Double.parseDouble(obArray[1]), Double.parseDouble(obArray[2]), Integer.parseInt(obArray[3]));
+		try {
+			//1. Creating Connection
+			Connection con = Database.startCon();
+
+			//2. Creating Statement
+			Statement stmnt = con.createStatement();
+
+			//3. Execute Query
+			stmnt.executeUpdate("INSERT INTO galamsey (vegCol, colVal, longitude, latitude, year, obId) VALUES ('" +a.getVegCol()+ "', " +a.getColVal()+", "+a.getLon()+ ", " +a.getLat()+ ", " +a.getYear()+ ", " +a.getObId()+ ")");
+
+			//add popup stuff here
+
+			stmnt.close();
+			con.close();
+
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 		start();
 	}
 	
