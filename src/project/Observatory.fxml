@@ -13,10 +13,11 @@
           <TableColumn fx:id="obName" prefWidth="120.0" text="Name" />
           <TableColumn fx:id="obCount" prefWidth="111.0" text="Country" />
             <TableColumn fx:id="obYear" prefWidth="89.0" text="Year" />
-            <TableColumn fx:id="obArea" prefWidth="130.0" text="Area" />
+            <TableColumn fx:id="obArea" prefWidth="100.0" text="Area" />
         </columns>
       </TableView>
-      <Button layoutX="446.0" layoutY="326.0" mnemonicParsing="false" text="Add Observatory" />
+      <Button layoutX="219.0" layoutY="326.0" mnemonicParsing="false" onAction="#loadAddObservatory" text="Add Observatory" />
       <Button layoutX="31.0" layoutY="326.0" mnemonicParsing="false" onAction="#loadMain_Menu" text="Back" />
+      <Button layoutX="372.0" layoutY="326.0" mnemonicParsing="false" onAction="#removeOb" text="Remove Observatory" />
    </children>
 </AnchorPane>

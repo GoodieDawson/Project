@@ -42,7 +42,7 @@ public class Add_Galamsey_Controller {
 					Double.parseDouble(lattxtbx.getText()),
 					Integer.parseInt(yrtxtbx.getText()));
 			
-			stmnt.executeUpdate("INSERT INTO galamsey (vegCol, colVal, longitude, latitude, year) VALUES ('" +obj.getVegCol()+ "', " +obj.getColVal()+", "+obj.getPos().getLon()+ ", " +obj.getPos().getLat()+ ", " +obj.getYear()+")");
+			stmnt.executeUpdate("INSERT INTO galamsey (vegCol, colVal, longitude, latitude, year) VALUES ('" +obj.getVegCol()+ "', " +obj.getColVal()+", "+obj.getLon()+ ", " +obj.getLat()+ ", " +obj.getYear()+")");
 			
 			vegcoltxtbx.clear();
 			lontxtbx.clear();

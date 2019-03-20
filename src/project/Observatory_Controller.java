@@ -85,4 +85,38 @@ public class Observatory_Controller {
         primaryStage.show();
     }
 
+    @FXML
+    void loadAddObservatory(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("AddObservatory.fxml"));
+        Scene scene = new Scene(root);
+        Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        primaryStage.hide();
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    @FXML
+    void removeOb(ActionEvent event) {
+        Observatory selectedItem = obTable.getSelectionModel().getSelectedItem();
+        obTable.getItems().remove(selectedItem);
+
+        try {
+            //1. Creating Connection
+            Connection con = Database.startCon();
+
+            //2. Creating Statement
+            Statement stmnt = con.createStatement();
+
+            //3. Execute Query
+            Observatory obj = obTable.getSelectionModel().getSelectedItem();
+            stmnt.executeUpdate("delete from observatory where (obId = " +obj.getObId()+ ")");
+
+            stmnt.close();
+            con.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
