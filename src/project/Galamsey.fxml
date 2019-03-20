@@ -9,13 +9,13 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.Galamsey_Controller">
    <children>
       <Button fx:id="addgalbtn" layoutX="84.0" layoutY="280.0" mnemonicParsing="false" onAction="#loadAdd_Galamsey" text="Add Galamsey" />
-      <Button layoutX="240.0" layoutY="280.0" mnemonicParsing="false" onAction="#removeGalam" text="Remove Galamesey" />
+      <Button layoutX="240.0" layoutY="280.0" mnemonicParsing="false" onAction="#removeGalam" text="Remove Galamsey" />
       <Button layoutX="445.0" layoutY="280.0" mnemonicParsing="false" text="Update Glamasey" />
       <Button layoutX="274.0" layoutY="346.0" mnemonicParsing="false" onAction="#loadMain_Menu" text="Back " />
       <TableView fx:id="galtable" layoutX="34.0" layoutY="47.0" prefHeight="200.0" prefWidth="538.0">
         <columns>
           <TableColumn fx:id="galId" prefWidth="75.0" text="GalamseyID" />
-          <TableColumn fx:id="vegCol" prefWidth="107.20001220703125" text="Vegitation Colour" />
+          <TableColumn fx:id="vegCol" prefWidth="107.20001220703125" text="Vegetation Colour" />
             <TableColumn fx:id="colVal" prefWidth="95.20001220703125" text="Colour Value" />
             <TableColumn fx:id="lon" prefWidth="66.39996337890625" text="Longitude" />
             <TableColumn fx:id="lat" prefWidth="55.99993896484375" text="Latitude" />

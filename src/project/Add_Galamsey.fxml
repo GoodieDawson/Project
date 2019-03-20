@@ -8,7 +8,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.Add_Galamsey_Controller">
    <children>
       <Button layoutX="288.0" layoutY="272.0" mnemonicParsing="false" onAction="#AddGalamsey" text="Add" />
-      <Label layoutX="153.0" layoutY="81.0" text="Vegitation Colour" />
+      <Label layoutX="153.0" layoutY="81.0" text="Vegetation Colour" />
       <TextField fx:id="vegcoltxtbx" layoutX="345.0" layoutY="77.0" />
       <Label layoutX="153.0" layoutY="127.0" text="Position" />
       <TextField fx:id="lattxtbx" layoutX="345.0" layoutY="165.0" />
