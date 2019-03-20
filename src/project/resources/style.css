@@ -5,3 +5,7 @@
 .text {
     -fx-font-family: 'BPreplay';
 }
+
+.pane {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 10, 0, 0, 0);
+}
