@@ -105,7 +105,8 @@ public class Galamsey {
 	 * A switch case to assign colour values to Galamsey events based on their vegetation colour
 	 * 
 	 * @param vegCol
-	 * @param pos
+	 * @param lon
+	 * @param lat
 	 * @param year
 	 */
 	public Galamsey(String vegCol, double lon, double lat, int year) {
@@ -210,7 +211,8 @@ public class Galamsey {
 
 	/**
 	 * This mutator allows you to set the position (longitude and latitude) of a Galamsey event
-	 * @param pos
+	 * @param lon
+	 * @param lat
 	 */
 	public void setPos(double lon, double lat) {
 		this.pos = new Position(lon, lat);
