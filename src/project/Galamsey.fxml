@@ -11,7 +11,7 @@
    <children>
       <Button fx:id="addgalbtn" layoutX="84.0" layoutY="280.0" mnemonicParsing="false" onAction="#loadAdd_Galamsey" text="Add Galamsey" />
       <Button layoutX="240.0" layoutY="280.0" mnemonicParsing="false" onAction="#removeGalam" text="Remove Galamsey" />
-      <Button layoutX="445.0" layoutY="280.0" mnemonicParsing="false" text="Update Glamasey" />
+      <Button layoutX="445.0" layoutY="280.0" mnemonicParsing="false" onAction="#loadUpdateGalamsey" text="Update Glamasey" />
       <Button layoutX="34.0" layoutY="346.0" mnemonicParsing="false" onAction="#loadMain_Menu" text="Back " />
       <TableView fx:id="galtable" layoutX="34.0" layoutY="47.0" prefHeight="200.0" prefWidth="538.0">
         <columns>
@@ -24,7 +24,7 @@
         </columns>
       </TableView>
       <Label layoutX="286.0" layoutY="14.0" text="Galamsey" />
-      <Button layoutX="439.0" layoutY="346.0" mnemonicParsing="false" text="Add to Observatory" />
+      <Button layoutX="439.0" layoutY="346.0" mnemonicParsing="false" onAction="#addToObsevatory" text="Add to Observatory" />
       <ChoiceBox fx:id="chcbx" layoutX="221.0" layoutY="346.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

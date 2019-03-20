@@ -84,6 +84,7 @@ public class Galamsey {
 	private int id;
 	private double lon;
 	private double lat;
+	private int obId;
 
 	public int getId() {
 		return id;
@@ -146,6 +147,35 @@ public class Galamsey {
 		this.id = id;
 		this.lon = lon;
 		this.lat = lat;
+	}
+
+	public Galamsey(String vegCol, double lon, double lat, int year, int obId) {
+		this.vegCol = VegCol.valueOf(vegCol);
+		switch(this.vegCol) {
+			case Green :
+				this.colVal = 1;
+				break;
+			case Yellow :
+				this.colVal = 2;
+				break;
+			case Brown :
+				this.colVal = 3;
+				break;
+		}
+		this.pos = new Position(lon, lat);
+		this.year = year;
+		this.id = id;
+		this.lon = lon;
+		this.lat = lat;
+		this.obId = obId;
+	}
+
+	public int getObId() {
+		return obId;
+	}
+
+	public void setObId(int obId) {
+		this.obId = obId;
 	}
 
 	public double getLon() {

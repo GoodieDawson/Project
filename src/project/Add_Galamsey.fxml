@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.Add_Galamsey_Controller">
    <children>
-      <Button layoutX="288.0" layoutY="272.0" mnemonicParsing="false" onAction="#AddGalamsey" text="Add" />
+      <Button layoutX="269.0" layoutY="305.0" mnemonicParsing="false" onAction="#AddGalamsey" text="Add" />
       <Label layoutX="153.0" layoutY="81.0" text="Vegetation Colour" />
       <TextField fx:id="vegcoltxtbx" layoutX="345.0" layoutY="77.0" />
       <Label layoutX="153.0" layoutY="127.0" text="Position" />
@@ -17,6 +18,8 @@
       <Label layoutX="278.0" layoutY="178.0" text="Latitude" />
       <Label layoutX="278.0" layoutY="127.0" text="Latitude" />
       <Label layoutX="153.0" layoutY="220.0" text="Year" />
-      <Button layoutX="274.0" layoutY="340.0" mnemonicParsing="false" onAction="#loadGalamsey" text="Back" />
+      <Button layoutX="268.0" layoutY="342.0" mnemonicParsing="false" onAction="#loadGalamsey" text="Back" />
+      <Label layoutX="151.0" layoutY="269.0" text="Observatory" />
+      <ChoiceBox fx:id="chcbx" layoutX="344.0" layoutY="265.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

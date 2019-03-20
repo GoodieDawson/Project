@@ -162,4 +162,43 @@ public class Galamsey_Controller {
 			e.printStackTrace();
 		}
 	}
+
+	@FXML
+	void addToObsevatory(ActionEvent event) {
+
+		try {
+			//1. Creating Connection
+			Connection con = Database.startCon();
+
+			//2. Creating Statement
+			Statement stmnt = con.createStatement();
+
+			//3. Execute Query
+			Galamsey obj = galtable.getSelectionModel().getSelectedItem();
+
+			stmnt.executeUpdate("UPDATE galamsey SET obId = " +Integer.parseInt(chcbx.getValue())+ " WHERE galamId = " +obj.getId());
+
+			stmnt.close();
+			con.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@FXML
+	void loadUpdateGalamsey (ActionEvent event) throws IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("UpdateGalamsey.fxml"));
+		Parent root = loader.load();
+		Scene scene = new Scene(root);
+		Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		primaryStage.hide();
+		primaryStage.setScene(scene);
+		primaryStage.show();
+
+		UpdateGalamseyController controller = loader.<UpdateGalamseyController>getController();;
+		Galamsey obj = galtable.getSelectionModel().getSelectedItem();
+		controller.initialize(obj.getId(), String.valueOf(obj.getVegCol()), obj.getLat(), obj.getLon(), obj.getYear());
+
+	}
 }

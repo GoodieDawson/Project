@@ -119,4 +119,19 @@ public class Observatory_Controller {
         }
     }
 
+    @FXML
+    void loadUpdateObservatory(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("UpdateObservatory.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        primaryStage.hide();
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+        UpdateObservatoryController controller = loader.<UpdateObservatoryController>getController();
+        Observatory obj = obTable.getSelectionModel().getSelectedItem();
+        controller.initialize(obj.getObId(), obj.getObName(), obj.getObCount(), obj.getObYear(), obj.getObArea());
+    }
+
 }

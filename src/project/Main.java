@@ -18,6 +18,7 @@ public class Main extends Application{
 	public void start(Stage primaryStage) {
 		try {
 			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("Main_Menu.fxml"));
+			primaryStage.setTitle("Galamsey Monitor");
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.show();
