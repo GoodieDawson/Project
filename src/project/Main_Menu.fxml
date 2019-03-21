@@ -8,34 +8,30 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #80B4B4 #80B4B4;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.Main_Menu_Controller">
    <Pane layoutX="288.0" prefHeight="400.0" prefWidth="312.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-border-color: #FFFFFF; -fx-border-radius: 5; -fx-background-insets: 0;" styleClass="pane" stylesheets="@resources/style.css">
-      <children>
-         <Button layoutX="36.0" layoutY="186.0" mnemonicParsing="false" onAction="#opengalam" prefHeight="29.0" prefWidth="105.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" styleClass="text" stylesheets="@resources/style.css" text="Galamsey" textFill="WHITE" />
-         <Label layoutX="50.0" layoutY="52.0" lineSpacing="2.0" prefHeight="84.0" prefWidth="209.0" styleClass="text" stylesheets="@resources/style.css" text="GALAMSEY MONITORING SYSTEM" textAlignment="CENTER" textFill="#575757" wrapText="true">
-            <font>
-               <Font name="BPreplay" size="20.0" />
-            </font>
-         </Label>
-         <Button layoutX="154.0" layoutY="186.0" mnemonicParsing="false" onAction="#loadObservatory" prefHeight="29.0" prefWidth="113.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" styleClass="text" stylesheets="@resources/style.css" text="Observatory" textFill="WHITE">
-            <font>
-               <Font name="BPreplay" size="13.0" />
-            </font>
-         </Button>
-         <Button layoutX="154.0" layoutY="241.0" mnemonicParsing="false" onAction="#Exit" prefHeight="29.0" prefWidth="113.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" styleClass="text" stylesheets="@resources/style.css" text="Exit" textFill="WHITE" />
-         <Button layoutX="36.0" layoutY="241.0" mnemonicParsing="false" onAction="#loadStatistics" prefHeight="29.0" prefWidth="105.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" styleClass="text" stylesheets="@resources/style.css" text="Statistics" textFill="WHITE" />
-      </children>
+      <Button layoutX="36.0" layoutY="186.0" mnemonicParsing="false" onAction="#opengalam" prefHeight="29.0" prefWidth="105.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" styleClass="text" stylesheets="@resources/style.css" text="Galamsey" textFill="WHITE" />
+      <Label layoutX="50.0" layoutY="52.0" lineSpacing="2.0" prefHeight="84.0" prefWidth="209.0" styleClass="text" stylesheets="@resources/style.css" text="GALAMSEY MONITORING SYSTEM" textAlignment="CENTER" textFill="#575757" wrapText="true">
+         <font>
+            <Font name="BPreplay" size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="154.0" layoutY="186.0" mnemonicParsing="false" onAction="#loadObservatory" prefHeight="29.0" prefWidth="113.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" styleClass="text" stylesheets="@resources/style.css" text="Observatory" textFill="WHITE">
+         <font>
+            <Font name="BPreplay" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="154.0" layoutY="241.0" mnemonicParsing="false" onAction="#Exit" prefHeight="29.0" prefWidth="113.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" styleClass="text" stylesheets="@resources/style.css" text="Exit" textFill="WHITE" />
+      <Button layoutX="36.0" layoutY="241.0" mnemonicParsing="false" onAction="#loadStatistics" prefHeight="29.0" prefWidth="105.0" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-border-radius: 20; -fx-background-radius: 20;" styleClass="text" stylesheets="@resources/style.css" text="Statistics" textFill="WHITE" />
    </Pane>
    <Pane layoutX="7.0" layoutY="9.0" prefHeight="382.0" prefWidth="281.0" style="-fx-background-color: #55A5A6;" styleClass="pane" stylesheets="@resources/style.css">
-      <children>
-         <Label layoutX="75.0" layoutY="96.0" prefHeight="58.0" prefWidth="132.0" styleClass="text" stylesheets="@resources/style.css" text="Welcome !" textAlignment="CENTER" textFill="#fcfcfc" wrapText="true">
-            <font>
-               <Font size="24.0" />
-            </font>
-         </Label>
-         <Label layoutX="46.0" layoutY="184.0" prefHeight="84.0" prefWidth="190.0" styleClass="text" stylesheets="@resources/style.css" text="Please click a button on the right to begin." textAlignment="CENTER" textFill="WHITE" wrapText="true">
-            <font>
-               <Font size="15.0" />
-            </font>
-         </Label>
-      </children>
+      <Label layoutX="85.0" layoutY="122.0" prefHeight="58.0" prefWidth="132.0" styleClass="text" stylesheets="@resources/style.css" text="Welcome" textAlignment="CENTER" textFill="#fcfcfc" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="46.0" layoutY="171.0" prefHeight="84.0" prefWidth="190.0" styleClass="text" stylesheets="@resources/style.css" text="Please click a button on the right to begin" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </Pane>
 </AnchorPane>
