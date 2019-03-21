@@ -1,14 +1,15 @@
-/**
- * 
- */
+
 package project;
 
 /**
- * @author Goodie Blake Dawson
+ * @author Group18
  *
  */
 import java.sql.*;
 
+/**
+ * A class that creates a connection to a database
+ */
 public class Database {
 
 	/**
