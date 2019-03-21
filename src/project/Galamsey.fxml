@@ -39,6 +39,6 @@
             </opaqueInsets>
         </ChoiceBox>
         <Button layoutX="480.0" layoutY="123.0" mnemonicParsing="false" onAction="#addToObsevatory" style="-fx-background-color: #80B4B4; -fx-border-color: #FFFFFF; -fx-background-insets: 0; -fx-background-radius: 20; -fx-border-radius: 20;" stylesheets="@resources/style.css" text="Add to Observatory" textFill="WHITE" />
-        <Label layoutX="254.0" layoutY="85.0" prefHeight="28.0" prefWidth="365.0" styleClass="text" stylesheets="@resources/style.css" text="Please select a Galamsey event and an Observatory ID first" textAlignment="CENTER" textFill="#80b4b4" wrapText="true" />
+        <Label layoutX="193.0" layoutY="85.0" prefHeight="28.0" prefWidth="426.0" styleClass="text" stylesheets="@resources/style.css" text="Please select a Galamsey event and an Observatory ID before adding" textAlignment="CENTER" textFill="#80b4b4" wrapText="true" />
     </Pane>
 </AnchorPane>
