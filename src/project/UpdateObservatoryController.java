@@ -62,7 +62,7 @@ public class UpdateObservatoryController {
                     countxtbx.getText(),
                     Integer.parseInt(yrtxtbx.getText()),
                     Double.parseDouble(areatxtbx.getText()));
-            stmnt.executeUpdate("UPDATE observatory SET obName = '" +obj.getObName()+"' WHERE obId = " +id );
+            stmnt.executeUpdate("UPDATE observatory SET obName = '" +obj.getObName()+"', obcount = '"+obj.getObCount()+"', obYear = "+obj.getObYear()+", obarea = "+obj.getObArea()+" WHERE obId = " +id );
 
             stmnt.close();
             con.close();

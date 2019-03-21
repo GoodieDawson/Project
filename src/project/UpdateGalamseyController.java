@@ -92,7 +92,7 @@ public class UpdateGalamseyController {
                     Double.parseDouble(lattxtbx.getText()),
                     Integer.parseInt(yrtxtbx.getText()),
                     Integer.parseInt(chcbx.getValue()));
-            stmnt.executeUpdate("UPDATE galamsey SET vegCol = '" +obj.getVegCol()+"' WHERE galamId = " +id );
+            stmnt.executeUpdate("UPDATE galamsey SET vegCol = '" +obj.getVegCol()+ "', colVal = "+obj.getColVal()+", longitude = "+obj.getLon()+", latitude = "+obj.getLat()+", year = "+obj.getYear()+", obId = "+obj.getObId()+" WHERE galamId = " +id );
 
             stmnt.close();
             con.close();
