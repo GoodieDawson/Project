@@ -18,7 +18,7 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="chcbx2" layoutX="353.0" layoutY="84.0" prefHeight="27.0" prefWidth="157.0" style="-fx-background-color: #80B4B4;" styleClass="text" stylesheets="@resources/style.css" />
+            <ChoiceBox fx:id="vegcolchcbx" layoutX="353.0" layoutY="84.0" prefHeight="27.0" prefWidth="157.0" style="-fx-background-color: #80B4B4;" styleClass="text" stylesheets="@resources/style.css" />
             <Label layoutX="191.0" layoutY="137.0" prefHeight="27.0" prefWidth="90.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-border-radius: 20; -fx-background-insets: 0; -fx-border-color: #FFFFFF;" styleClass="text" stylesheets="@resources/style.css" text="Position" textFill="#55a5a6" />
             <TextField fx:id="lontxtbx" layoutX="353.0" layoutY="137.0" promptText="Longitude" stylesheets="@resources/style.css">
                <styleClass>

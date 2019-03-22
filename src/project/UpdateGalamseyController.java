@@ -39,9 +39,6 @@ public class UpdateGalamseyController {
     @FXML
     private ChoiceBox<String> chcbx;
 
-    @FXML
-    private ChoiceBox<String> chcbx2;
-
     ObservableList<String> list = FXCollections.observableArrayList();
     ObservableList<String> list2 = FXCollections.observableArrayList("Green", "Yellow", "Brown");
 
@@ -91,8 +88,8 @@ public class UpdateGalamseyController {
             e.printStackTrace();
         }
 
+        vegcolchcbx.setItems(list2);
         chcbx.setItems(list);
-        chcbx2.setItems(list2);
 
 
     }
@@ -124,13 +121,14 @@ public class UpdateGalamseyController {
             catch (Exception e) {
                 e.printStackTrace();
             }
+            vegcolchcbx.setValue(null);
+            lontxtbx.clear();
+            lattxtbx.clear();
+            yrtxtbx.clear();
+            chcbx.setValue(null);
         }
 
-        vegcolchcbx.setValue(null);
-        lontxtbx.clear();
-        lattxtbx.clear();
-        yrtxtbx.clear();
-        chcbx.setValue(null);
+
     }
 
 
