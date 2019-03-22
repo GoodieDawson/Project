@@ -79,8 +79,8 @@ public class Statistics_Controller {
 
     ObservableList<Observatory> list1 = FXCollections.observableArrayList();
     ObservableList<Galamsey> list2 = FXCollections.observableArrayList();
-    ObservableList<String> list3 = FXCollections.observableArrayList("Largest Value", "Average Value", "Galamsey List", "Observatory: Largest Average");
-    ObservableList<String> list4 = FXCollections.observableArrayList("Largest Value", "Above");
+    ObservableList<String> list3 = FXCollections.observableArrayList("Largest Colour Value", "Average Colour Value", "Galamsey List", "Observatory: \nLargest Average \nColour Value");
+    ObservableList<String> list4 = FXCollections.observableArrayList("Largest Colour Value", "Colour Values Above...");
 
     @FXML
     private void initialize() {
@@ -353,10 +353,10 @@ public class Statistics_Controller {
     @FXML
     void obStatNav(ActionEvent event) {
         switch(chbx1.getValue()) {
-            case "Largest Value" :
+            case "Largest Colour Value" :
                 obLargestValue();
                 break;
-            case "Average Value" :
+            case "Average Colour Value" :
                 averageValue();
                 break;
             case "Galamsey List" :
@@ -364,7 +364,7 @@ public class Statistics_Controller {
                 galList(Integer.parseInt(txtbx1.getText()));
                 txtbx1.setText("");
                 break;
-            case "Observatory: Largest Average" :
+            case "Observatory: Largest Average Colour Value" :
                 obLargestAverage();
                 break;
 
@@ -377,7 +377,7 @@ public class Statistics_Controller {
             case "Largest Value" :
                 galLargestValue();
                 break;
-            case "Above" :
+            case "Colour Values Above..." :
                 if (txtbx2.getText() == null) {txtbx2.setText("0");}
                 above(Integer.parseInt(txtbx2.getText()));
                 txtbx2.setText("");
