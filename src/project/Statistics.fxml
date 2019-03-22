@@ -27,7 +27,6 @@
             <TableColumn fx:id="obArea" prefWidth="108.0" text="Area" />
          </columns>
       </TableView>
-      <TextField fx:id="txtbx1" layoutX="582.0" layoutY="163.0" prefHeight="27.0" prefWidth="167.0" />
       <ChoiceBox fx:id="chbx1" layoutX="578.0" layoutY="120.0" prefHeight="27.0" prefWidth="174.0" style="-fx-background-color: #80B4B4;" stylesheets="@resources/style.css">
          <styleClass>
             <String fx:value="text" />
@@ -45,19 +44,19 @@
             <Font name="System Italic" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="result2" layoutX="637.0" layoutY="515.0" prefHeight="27.0" prefWidth="97.0" styleClass="text" stylesheets="@resources/style.css" text="No Result" textFill="#575757" />
-      <Label layoutX="579.0" layoutY="515.0" prefHeight="27.0" prefWidth="47.0" styleClass="text" stylesheets="@resources/style.css" text="Result:" textFill="#575757">
+      <Label fx:id="result2" layoutX="637.0" layoutY="507.0" prefHeight="27.0" prefWidth="97.0" styleClass="text" stylesheets="@resources/style.css" text="No Result" textFill="#575757" />
+      <Label layoutX="579.0" layoutY="507.0" prefHeight="27.0" prefWidth="50.0" styleClass="text" stylesheets="@resources/style.css" text="Result:" textFill="#55a5a6">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="result1" layoutX="635.0" layoutY="247.0" prefHeight="27.0" prefWidth="97.0" styleClass="text" stylesheets="@resources/style.css" text="No Result" textFill="#575757" />
-      <Label layoutX="578.0" layoutY="251.0" prefHeight="19.0" prefWidth="57.0" styleClass="text" stylesheets="@resources/style.css" text="Result:" textFill="#575757">
+      <Label fx:id="result1" layoutX="637.0" layoutY="244.0" prefHeight="27.0" prefWidth="97.0" styleClass="text" stylesheets="@resources/style.css" text="No Result" textFill="#575757" />
+      <Label layoutX="576.0" layoutY="247.0" prefHeight="19.0" prefWidth="57.0" styleClass="text" stylesheets="@resources/style.css" text="Result:" textFill="#55a5a6">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Button layoutX="673.0" layoutY="204.0" mnemonicParsing="false" onAction="#obStatNav" prefHeight="27.0" prefWidth="73.0" style="-fx-background-color: #80B4B4; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: #FFFFFF; -fx-background-insets: 0;" styleClass="text" stylesheets="@resources/style.css" text="Find" textFill="WHITE" />
+      <Button layoutX="673.0" layoutY="167.0" mnemonicParsing="false" onAction="#obStatNav" prefHeight="27.0" prefWidth="73.0" style="-fx-background-color: #80B4B4; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: #FFFFFF; -fx-background-insets: 0;" styleClass="text" stylesheets="@resources/style.css" text="Find" textFill="WHITE" />
       <ChoiceBox fx:id="chbx2" layoutX="578.0" layoutY="349.0" prefHeight="27.0" prefWidth="174.0" style="-fx-background-color: #80B4B4;" stylesheets="@resources/style.css">
          <styleClass>
             <String fx:value="text" />
@@ -78,7 +77,7 @@
    </Pane>
    <Pane layoutY="5.0" prefHeight="558.0" prefWidth="73.0" style="-fx-background-color: #55A5A6; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #55A5A6; -fx-background-insets: 0;" styleClass="pane" stylesheets="@resources/style.css">
       <Button layoutX="8.0" layoutY="21.0" mnemonicParsing="false" onAction="#loadMainMenu" prefHeight="27.0" prefWidth="57.0" style="-fx-background-color: #80B4B4; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: #FFFFFF; -fx-background-insets: 0;" styleClass="text" stylesheets="@resources/style.css" text="Home" textFill="WHITE" />
-      <Label alignment="CENTER" layoutX="-38.0" layoutY="169.0" prefHeight="16.0" prefWidth="159.0" stylesheets="@resources/style.css" text="Observatory" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="-38.0" layoutY="163.0" prefHeight="16.0" prefWidth="159.0" stylesheets="@resources/style.css" text="Observatory" textFill="WHITE">
          <styleClass>
             <String fx:value="vertical" />
             <String fx:value="text" />
@@ -87,7 +86,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="-33.0" layoutY="411.0" prefHeight="35.0" prefWidth="149.0" stylesheets="@resources/style.css" text="Galamsey" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="-33.0" layoutY="388.0" prefHeight="35.0" prefWidth="149.0" stylesheets="@resources/style.css" text="Galamsey" textFill="WHITE">
          <styleClass>
             <String fx:value="vertical" />
             <String fx:value="text" />

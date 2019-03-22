@@ -5,6 +5,9 @@
  */
 package project;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
@@ -20,21 +23,47 @@ public class Monitoring extends Observatory{
 	 * @return
 	 */
 	public static Observatory hiObAvg () {
-		double hiAvg = 0;
-		Observatory hiOb = null;
-		
-		for (Observatory ob : ObList) {
-			int obSum = 0;
-			
-			for (Galamsey galam : ob.getEvents()) {
-				obSum = obSum + galam.getColVal();
+		int sum = 0;
+		int count = 0;
+		double avg = 0;
+		int avgId = 0;
+		Observatory x = null;
+
+		try {
+			//1. Creating Connection
+			Connection con = Database.startCon();
+
+			//2. Creating Statement
+			Statement stmnt1 = con.createStatement();
+			Statement stmnt2 = con.createStatement();
+
+			//3. Execute Query
+			ResultSet rs1 = stmnt1.executeQuery("select * from observatory");
+			while (rs1.next()) {
+				ResultSet rs2 = stmnt2.executeQuery("select * from galamsey where obId = " + rs1.getString("obId"));
+				while (rs2.next()) {
+					sum = sum + Integer.parseInt(rs2.getString("colVal"));
+					count++;
+				}
+
+				if (avg < (sum / count)) {
+					avg = (sum / count);
+					avgId = Integer.parseInt(rs1.getString("obId"));
+				}
 			}
-			
-			double obAvg = obSum / ob.getEvents().size();
-			if (obAvg > hiAvg) { hiOb = ob; }
+
+			ResultSet rs3 = stmnt1.executeQuery("select * from observatory where obId = " +avgId);
+			while (rs3.next()) {
+				x = new Observatory (Integer.parseInt(rs3.getString("obId")), rs3.getString("obName"), rs3.getString("obCount"), Integer.parseInt(rs3.getString("obYear")), Double.parseDouble(rs3.getString("obArea")));
+
+			}
+			return x;
 		}
-		
-		return hiOb;
+		catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
 	}
 	
 	/**
@@ -43,15 +72,30 @@ public class Monitoring extends Observatory{
 	 */
 	public static int maxValEver() {
 		int max = 0;
-		if (ObList.isEmpty()) {
-			System.out.println("The max value cannot be determined as there are no observatories");	
-		}
-		else {
-			for (Observatory obj: ObList) {
-					if (obj.maxColVal() > max) {max = obj.maxColVal();}
+
+		try {
+			//1. Creating Connection
+			Connection con = Database.startCon();
+
+			//2. Creating Statement
+			Statement stmnt = con.createStatement();
+
+			//3. Execute Query
+			ResultSet rs = stmnt.executeQuery("select * from galamsey");
+
+			while (rs.next()) {
+				if (max < Integer.parseInt(rs.getString("colVal"))) {max = Integer.parseInt(rs.getString("colVal"));}
 			}
+
+			stmnt.close();
+			con.close();
+			return max;
 		}
-		return max;
+		catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+
 	}
 	
 	/**

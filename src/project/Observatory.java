@@ -243,6 +243,17 @@ public class Observatory extends Galamsey {
 		}
 		return numList;
 	}
+
+	@Override
+	public String toString() {
+		return "\nThe details of this Observatory are: " +
+				"\nName: " + obName +
+				"\nCountry: " + obCount +
+				"\nYear: " + obYear +
+				"\nArea: " + obArea
+				;
+	}
+
 	/**
 	 * @param args
 	 */

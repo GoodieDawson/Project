@@ -72,9 +72,6 @@ public class Statistics_Controller {
     private Label result2;
 
     @FXML
-    private TextField txtbx1;
-
-    @FXML
     private TextField txtbx2;
 
     ObservableList<Observatory> list1 = FXCollections.observableArrayList();
@@ -114,7 +111,6 @@ public class Statistics_Controller {
         }
 
         chbx1.setItems(list3);
-        txtbx1.setText(null);
         obTable.setItems(list1);
 
         galId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -225,7 +221,7 @@ public class Statistics_Controller {
     }
 
     @FXML
-    void galList(int x) {
+    void galList() {
         galtable.getItems().clear();
         try {
             //1. Creating Connection
@@ -236,7 +232,7 @@ public class Statistics_Controller {
 
             //3. Execute Query
             Observatory obj = obTable.getSelectionModel().getSelectedItem();
-            ResultSet rs = stmnt.executeQuery("select * from galamsey where obId = " +obj.getObId()+ " and colVal > " +x);
+            ResultSet rs = stmnt.executeQuery("select * from galamsey where obId = " +obj.getObId());
             while (rs.next()) {
                 list2.add(new Galamsey (Integer.parseInt(rs.getString("galamId")), rs.getString("vegCol"), Double.parseDouble(rs.getString("longitude")),Double.parseDouble(rs.getString("latitude")),Integer.parseInt(rs.getString("year"))));
             }
@@ -249,6 +245,7 @@ public class Statistics_Controller {
         }
 
         galtable.setItems(list2);
+
     }
 
     @FXML
@@ -360,11 +357,9 @@ public class Statistics_Controller {
                 averageValue();
                 break;
             case "Galamsey List" :
-                if (txtbx1.getText() == null) {txtbx1.setText("0");}
-                galList(Integer.parseInt(txtbx1.getText()));
-                txtbx1.setText("");
+                galList();
                 break;
-            case "Observatory: Largest Average Colour Value" :
+            case "Observatory: \nLargest Average \nColour Value" :
                 obLargestAverage();
                 break;
 
@@ -374,7 +369,7 @@ public class Statistics_Controller {
     @FXML
     void galStatNav(ActionEvent event) {
         switch(chbx2.getValue().toString()) {
-            case "Largest Value" :
+            case "Largest Colour Value" :
                 galLargestValue();
                 break;
             case "Colour Values Above..." :

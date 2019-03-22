@@ -6,6 +6,7 @@
 package project;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
 
@@ -124,8 +125,29 @@ public class MonitoringIO extends Monitoring{
 		case "givenList" : 
 			System.out.println("Please input a number");
 			int num  = input.nextInt();
-			for(Galamsey obj : givenList(num)) {
-				obj.toString();
+			Galamsey x = null;
+			try {
+				//1. Creating Connection
+				Connection con = Database.startCon();
+
+				//2. Creating Statement
+				Statement stmnt = con.createStatement();
+
+				//3. Execute Query
+				ResultSet rs = stmnt.executeQuery("select * from galamsey where colVal > " +num);
+
+				//4. Processing Result
+				while (rs.next()) {
+					x = new Galamsey (Integer.parseInt(rs.getString("galamId")), rs.getString("vegCol"), Double.parseDouble(rs.getString("longitude")),Double.parseDouble(rs.getString("latitude")),Integer.parseInt(rs.getString("year")));
+					System.out.println("\n" + x.toString());
+				}
+
+				rs.close();
+				stmnt.close();
+				con.close();
+			}
+			catch (Exception e) {
+				e.printStackTrace();
 			}
 			start();
 		}

@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
 /**
@@ -26,7 +27,10 @@ import javafx.stage.Stage;
  *
  */
 public class Galamsey_Controller {
-	
+
+	@FXML
+	private Label lbl1;
+
     @FXML
     private Button addgalbtn;
     
@@ -177,6 +181,10 @@ public class Galamsey_Controller {
 			Galamsey obj = galtable.getSelectionModel().getSelectedItem();
 
 			stmnt.executeUpdate("UPDATE galamsey SET obId = " +Integer.parseInt(chcbx.getValue())+ " WHERE galamId = " +obj.getId());
+
+			lbl1.setText(null);
+			lbl1.setText("Addition Successful");
+			lbl1.setTextFill(Paint.valueOf("#80B4B4"));
 
 			stmnt.close();
 			con.close();
