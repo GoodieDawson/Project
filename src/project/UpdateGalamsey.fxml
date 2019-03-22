@@ -42,11 +42,12 @@
                   </Label>
                </children>
             </Pane>
-            <Label layoutX="189.0" layoutY="42.0" prefHeight="27.0" prefWidth="232.0" styleClass="text" stylesheets="@resources/style.css" text="Please fill in the follwing details:" textFill="#80b4b4">
+            <Label layoutX="189.0" layoutY="42.0" prefHeight="27.0" prefWidth="232.0" styleClass="text" stylesheets="@resources/style.css" text="Please fill in the following details:" textFill="#80b4b4">
                <font>
                   <Font name="System Italic" size="13.0" />
                </font>
             </Label>
+            <Label fx:id="lbl1" layoutX="172.0" layoutY="327.0" prefHeight="51.0" prefWidth="157.0" styleClass="text" stylesheets="@resources/style.css" wrapText="true" />
          </children>
       </Pane>
    </children>
