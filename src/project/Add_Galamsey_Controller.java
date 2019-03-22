@@ -44,6 +44,20 @@ public class Add_Galamsey_Controller {
 
 	ObservableList<String> list2 = FXCollections.observableArrayList("Green", "Yellow", "Brown");
 
+	boolean validateInput(String longitude, String latitude, String year){
+		try {
+			double lon = Double.parseDouble(longitude);
+			double lat = Double.parseDouble(latitude);
+			int yr = Integer.parseInt(year);
+			return true;
+		}
+		catch (NumberFormatException e){
+			lbl1.setText("Addition Failed: Please check your input");
+			lbl1.setTextFill(Paint.valueOf("#d64541"));
+			return false;
+		}
+	}
+
 	@FXML
 	void initialize () {
 		try {
@@ -76,40 +90,41 @@ public class Add_Galamsey_Controller {
 
 	@FXML
     void AddGalamsey(ActionEvent event) {
-    	try {
-			//1. Creating Connection
-			Connection con = Database.startCon();
-			
-			//2. Creating Statement
-			Statement stmnt = con.createStatement();
-					
-			//3. Execute Query
-			if (chcbx.getValue() == null) {chcbx.setValue("0");}
-			Galamsey obj = new Galamsey (chcbx2.getValue(),
-					Double.parseDouble(lontxtbx.getText()), 
-					Double.parseDouble(lattxtbx.getText()),
-					Integer.parseInt(yrtxtbx.getText()),
-					Integer.parseInt(chcbx.getValue()));
-			
-			stmnt.executeUpdate("INSERT INTO galamsey (vegCol, colVal, longitude, latitude, year, obId) VALUES ('" +obj.getVegCol()+ "', " +obj.getColVal()+", "+obj.getLon()+ ", " +obj.getLat()+ ", " +obj.getYear()+ ", " +obj.getObId()+ ")");
+		if (validateInput(lontxtbx.getText(), lattxtbx.getText(), yrtxtbx.getText()) == true) {
+			try {
+				//1. Creating Connection
+				Connection con = Database.startCon();
 
-			lontxtbx.clear();
-			lattxtbx.clear();
-			yrtxtbx.clear();
-			chcbx.setValue(null);
-			chcbx2.setValue(null);
+				//2. Creating Statement
+				Statement stmnt = con.createStatement();
 
-			lbl1.setText("Addition Successful");
-			lbl1.setTextFill(Paint.valueOf("#80B4B4"));
-			
-			stmnt.close();
-			con.close();
-			
-		} 
-		catch (Exception e) {
-			e.printStackTrace();
+				//3. Execute Query
+				if (chcbx.getValue() == null) {chcbx.setValue("0");}
+				Galamsey obj = new Galamsey (chcbx2.getValue(),
+						Double.parseDouble(lontxtbx.getText()),
+						Double.parseDouble(lattxtbx.getText()),
+						Integer.parseInt(yrtxtbx.getText()),
+						Integer.parseInt(chcbx.getValue()));
+
+				stmnt.executeUpdate("INSERT INTO galamsey (vegCol, colVal, longitude, latitude, year, obId) VALUES ('" +obj.getVegCol()+ "', " +obj.getColVal()+", "+obj.getLon()+ ", " +obj.getLat()+ ", " +obj.getYear()+ ", " +obj.getObId()+ ")");
+
+				lontxtbx.clear();
+				lattxtbx.clear();
+				yrtxtbx.clear();
+				chcbx.setValue(null);
+				chcbx2.setValue(null);
+
+				lbl1.setText("Addition Successful");
+				lbl1.setTextFill(Paint.valueOf("#80B4B4"));
+
+				stmnt.close();
+				con.close();
+
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-
     }
     
     @FXML
