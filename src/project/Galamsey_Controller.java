@@ -184,6 +184,7 @@ public class Galamsey_Controller {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
+		chcbx.setValue(null);
 	}
 
 	@FXML

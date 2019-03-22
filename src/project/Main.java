@@ -11,7 +11,7 @@ import javafx.fxml.FXMLLoader;
 
 /**
  * @author Goodie Blake Dawson
- *Main method
+ *Main Method
  */
 public class Main extends Application{
 	@Override
