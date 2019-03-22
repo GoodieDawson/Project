@@ -22,12 +22,12 @@
             <String fx:value="text-field" />
          </styleClass>
       </TextField>
-      <Label layoutX="253.0" layoutY="264.0" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-border-radius: 20; -fx-background-insets: 0; -fx-border-color: #FFFFFF;" styleClass="text" stylesheets="@resources/style.css" text="Area" textFill="#55a5a6" />
-      <TextField fx:id="areatxtbx" layoutX="347.0" layoutY="265.0" promptText="Area" styleClass="text" stylesheets="@resources/style.css" />
+      <Label layoutX="253.0" layoutY="251.0" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-border-radius: 20; -fx-background-insets: 0; -fx-border-color: #FFFFFF;" styleClass="text" stylesheets="@resources/style.css" text="Area" textFill="#55a5a6" />
+      <TextField fx:id="areatxtbx" layoutX="353.0" layoutY="252.0" promptText="Area" styleClass="text" stylesheets="@resources/style.css" />
       <Label layoutX="253.0" layoutY="196.0" prefHeight="27.0" prefWidth="57.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20; -fx-border-radius: 20; -fx-background-insets: 0; -fx-border-color: #FFFFFF;" styleClass="text" stylesheets="@resources/style.css" text="Year" textAlignment="CENTER" textFill="#55a5a6" />
       <TextField fx:id="yrtxtbx" layoutX="353.0" layoutY="195.0" promptText="Year" styleClass="text" stylesheets="@resources/style.css" />
-      <Button alignment="CENTER" layoutX="433.0" layoutY="339.0" mnemonicParsing="false" onAction="#addObservatory" prefHeight="28.0" prefWidth="74.0" style="-fx-background-color: #80B4B4; -fx-background-radius: 20; -fx-border-radius: 20; -fx-background-insets: 0; -fx-border-color: #FFFFFF;" text="Add" textFill="WHITE" />
-      <Button alignment="CENTER" layoutX="336.0" layoutY="339.0" mnemonicParsing="false" onAction="#loadObservatory" prefHeight="28.0" prefWidth="82.0" style="-fx-background-color: #80B4B4; -fx-background-radius: 20; -fx-border-radius: 20; -fx-background-insets: 0; -fx-border-color: #FFFFFF;" text="Back" textFill="WHITE" />
+      <Button alignment="CENTER" layoutX="436.0" layoutY="325.0" mnemonicParsing="false" onAction="#addObservatory" prefHeight="28.0" prefWidth="74.0" style="-fx-background-color: #80B4B4; -fx-background-radius: 20; -fx-border-radius: 20; -fx-background-insets: 0; -fx-border-color: #FFFFFF;" text="Add" textFill="WHITE" />
+      <Button alignment="CENTER" layoutX="343.0" layoutY="325.0" mnemonicParsing="false" onAction="#loadObservatory" prefHeight="28.0" prefWidth="82.0" style="-fx-background-color: #80B4B4; -fx-background-radius: 20; -fx-border-radius: 20; -fx-background-insets: 0; -fx-border-color: #FFFFFF;" text="Back" textFill="WHITE" />
       <Pane layoutX="-23.0" layoutY="-10.0" prefHeight="408.0" prefWidth="173.0" style="-fx-background-color: #80B4B4; -fx-background-radius: 5; -fx-border-radius: 5; -fx-background-insets: 0; -fx-border-color: #55A5A6;" styleClass="pane" stylesheets="@resources/style.css">
          <Label layoutX="10.0" layoutY="23.0" prefHeight="93.0" prefWidth="157.0" styleClass="text" stylesheets="@resources/style.css" text="Add Observatory" textFill="WHITE" wrapText="true">
             <font>
@@ -35,7 +35,7 @@
             </font>
          </Label>
       </Pane>
-      <Label layoutX="189.0" layoutY="42.0" prefHeight="27.0" prefWidth="232.0" styleClass="text" stylesheets="@resources/style.css" text="Please fill in the follwing details:" textFill="#80b4b4">
+      <Label layoutX="166.0" layoutY="41.0" prefHeight="27.0" prefWidth="232.0" styleClass="text" stylesheets="@resources/style.css" text="Please fill in the following details:" textFill="#80b4b4">
          <font>
             <Font name="System Italic" size="13.0" />
          </font>
@@ -46,5 +46,6 @@
             <String fx:value="text-field" />
          </styleClass>
       </TextField>
+      <Label fx:id="lbl1" layoutX="173.0" layoutY="310.0" prefHeight="58.0" prefWidth="147.0" styleClass="text" stylesheets="@resources/style.css" wrapText="true" />
    </Pane>
 </AnchorPane>
