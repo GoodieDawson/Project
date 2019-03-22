@@ -32,3 +32,11 @@
 .vertical {
     -fx-rotate:-90;
 }
+
+.choice-box {
+    -fx-control-inner-background: #80B4B4;
+}
+
+.choice-box .label {
+    -fx-text-fill: #FFFFFF;
+}

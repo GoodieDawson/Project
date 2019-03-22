@@ -12,13 +12,13 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="567.0" prefWidth="843.0" style="-fx-background-color: #80B4B4;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.Statistics_Controller">
-   <Pane layoutX="77.0" layoutY="9.0" prefHeight="549.0" prefWidth="759.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #FFFFFF; -fx-background-insets: 0;" styleClass="pane" stylesheets="@resources/style.css">
-      <Label layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="180.0" styleClass="text" stylesheets="@resources/style.css" text="Statistics" textFill="#575757">
+   <Pane layoutX="69.0" layoutY="9.0" prefHeight="549.0" prefWidth="767.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #FFFFFF; -fx-background-insets: 0;" styleClass="pane" stylesheets="@resources/style.css">
+      <Label layoutX="22.0" layoutY="14.0" prefHeight="35.0" prefWidth="180.0" styleClass="text" stylesheets="@resources/style.css" text="Statistics" textFill="#575757">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
-      <TableView fx:id="obTable" layoutX="7.0" layoutY="69.0" prefHeight="213.0" prefWidth="562.0" styleClass="text">
+      <TableView fx:id="obTable" layoutX="7.0" layoutY="69.0" prefHeight="195.0" prefWidth="562.0" styleClass="text">
          <columns>
             <TableColumn fx:id="obId" prefWidth="48.0" text="ID" />
             <TableColumn fx:id="obName" prefWidth="178.0" text="Name" />
@@ -27,48 +27,58 @@
             <TableColumn fx:id="obArea" prefWidth="108.0" text="Area" />
          </columns>
       </TableView>
-      <TextField fx:id="txtbx1" layoutX="578.0" layoutY="163.0" prefHeight="27.0" prefWidth="167.0" />
-      <ChoiceBox fx:id="chbx1" layoutX="578.0" layoutY="120.0" prefHeight="27.0" prefWidth="167.0" style="-fx-background-color: #80B4B4;" styleClass="text" stylesheets="@resources/style.css" />
+      <TextField fx:id="txtbx1" layoutX="582.0" layoutY="163.0" prefHeight="27.0" prefWidth="167.0" />
+      <ChoiceBox fx:id="chbx1" layoutX="578.0" layoutY="120.0" prefHeight="27.0" prefWidth="174.0" style="-fx-background-color: #80B4B4;" stylesheets="@resources/style.css">
+         <styleClass>
+            <String fx:value="text" />
+            <String fx:value="label" />
+            <String fx:value="choice-box" />
+         </styleClass></ChoiceBox>
       <TextField fx:id="txtbx2" layoutX="586.0" layoutY="393.0" prefHeight="27.0" prefWidth="159.0" />
-      <Label layoutX="606.0" layoutY="302.0" prefHeight="28.0" prefWidth="140.0" styleClass="text" stylesheets="@resources/style.css" text="Please select an action" textAlignment="CENTER" textFill="#80b4b4" wrapText="true">
+      <Label layoutX="615.0" layoutY="302.0" prefHeight="28.0" prefWidth="140.0" styleClass="text" stylesheets="@resources/style.css" text="Please select an action" textAlignment="CENTER" textFill="#80b4b4" wrapText="true">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="606.0" layoutY="69.0" prefHeight="28.0" prefWidth="140.0" styleClass="text" stylesheets="@resources/style.css" text="Please select an action" textFill="#80b4b4" wrapText="true">
+      <Label layoutX="615.0" layoutY="69.0" prefHeight="28.0" prefWidth="140.0" styleClass="text" stylesheets="@resources/style.css" text="Please select an action" textFill="#80b4b4" wrapText="true">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="result2" layoutX="594.0" layoutY="496.0" prefHeight="28.0" prefWidth="159.0" styleClass="text" stylesheets="@resources/style.css" text="No Result" textFill="#575757" />
-      <Label layoutX="578.0" layoutY="469.0" prefHeight="27.0" prefWidth="73.0" styleClass="text" stylesheets="@resources/style.css" text="Result:" textFill="#575757">
+      <Label fx:id="result2" layoutX="637.0" layoutY="515.0" prefHeight="27.0" prefWidth="97.0" styleClass="text" stylesheets="@resources/style.css" text="No Result" textFill="#575757" />
+      <Label layoutX="579.0" layoutY="515.0" prefHeight="27.0" prefWidth="47.0" styleClass="text" stylesheets="@resources/style.css" text="Result:" textFill="#575757">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="result1" layoutX="594.0" layoutY="261.0" prefHeight="27.0" prefWidth="159.0" styleClass="text" stylesheets="@resources/style.css" text="No Result" textFill="#575757" />
-      <Label layoutX="582.0" layoutY="232.0" prefHeight="16.0" prefWidth="48.0" styleClass="text" stylesheets="@resources/style.css" text="Result:" textFill="#575757">
+      <Label fx:id="result1" layoutX="635.0" layoutY="247.0" prefHeight="27.0" prefWidth="97.0" styleClass="text" stylesheets="@resources/style.css" text="No Result" textFill="#575757" />
+      <Label layoutX="578.0" layoutY="251.0" prefHeight="19.0" prefWidth="57.0" styleClass="text" stylesheets="@resources/style.css" text="Result:" textFill="#575757">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
       <Button layoutX="673.0" layoutY="204.0" mnemonicParsing="false" onAction="#obStatNav" prefHeight="27.0" prefWidth="73.0" style="-fx-background-color: #80B4B4; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: #FFFFFF; -fx-background-insets: 0;" styleClass="text" stylesheets="@resources/style.css" text="Find" textFill="WHITE" />
-      <ChoiceBox fx:id="chbx2" layoutX="586.0" layoutY="349.0" prefHeight="27.0" prefWidth="159.0" style="-fx-background-color: #80B4B4;" styleClass="text" stylesheets="@resources/style.css" />
-      <Button layoutX="673.0" layoutY="434.0" mnemonicParsing="false" onAction="#galStatNav" prefHeight="27.0" prefWidth="73.0" style="-fx-background-color: #80B4B4; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: #FFFFFF; -fx-background-insets: 0;" styleClass="text" stylesheets="@resources/style.css" text="Find" textFill="WHITE" />
+      <ChoiceBox fx:id="chbx2" layoutX="578.0" layoutY="349.0" prefHeight="27.0" prefWidth="174.0" style="-fx-background-color: #80B4B4;" stylesheets="@resources/style.css">
+         <styleClass>
+            <String fx:value="text" />
+            <String fx:value="label" />
+            <String fx:value="choice-box" />
+         </styleClass></ChoiceBox>
+      <Button layoutX="673.0" layoutY="442.0" mnemonicParsing="false" onAction="#galStatNav" prefHeight="27.0" prefWidth="73.0" style="-fx-background-color: #80B4B4; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: #FFFFFF; -fx-background-insets: 0;" styleClass="text" stylesheets="@resources/style.css" text="Find" textFill="WHITE" />
+      <TableView fx:id="galtable" layoutX="7.0" layoutY="279.0" prefHeight="257.0" prefWidth="562.0" styleClass="text" stylesheets="@resources/style.css">
+         <columns>
+            <TableColumn fx:id="galId" prefWidth="49.0" text="ID" />
+            <TableColumn fx:id="vegCol" prefWidth="121.5" text="Vegetation Colour" />
+            <TableColumn fx:id="colVal" prefWidth="102.5" text="Colour Value" />
+            <TableColumn fx:id="lon" prefWidth="109.5" text="Longitude" />
+            <TableColumn fx:id="lat" prefWidth="103.0" text="Latitude" />
+            <TableColumn fx:id="year" prefWidth="79.5" text="Year" />
+         </columns>
+      </TableView>
    </Pane>
-   <TableView fx:id="galtable" layoutX="84.0" layoutY="310.0" prefHeight="244.0" prefWidth="562.0" styleClass="text" stylesheets="@resources/style.css">
-      <columns>
-         <TableColumn fx:id="galId" prefWidth="49.0" text="ID" />
-         <TableColumn fx:id="vegCol" prefWidth="121.5" text="Vegetation Colour" />
-         <TableColumn fx:id="colVal" prefWidth="102.5" text="Colour Value" />
-         <TableColumn fx:id="lon" prefWidth="109.5" text="Longitude" />
-         <TableColumn fx:id="lat" prefWidth="103.0" text="Latitude" />
-         <TableColumn fx:id="year" prefWidth="79.5" text="Year" />
-      </columns>
-   </TableView>
    <Pane layoutY="5.0" prefHeight="558.0" prefWidth="73.0" style="-fx-background-color: #55A5A6; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #55A5A6; -fx-background-insets: 0;" styleClass="pane" stylesheets="@resources/style.css">
-      <Button layoutX="8.0" layoutY="14.0" mnemonicParsing="false" onAction="#loadMainMenu" prefHeight="27.0" prefWidth="57.0" style="-fx-background-color: #80B4B4; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: #FFFFFF; -fx-background-insets: 0;" styleClass="text" stylesheets="@resources/style.css" text="Home" textFill="WHITE" />
-      <Label alignment="CENTER" layoutX="-38.0" layoutY="150.0" prefHeight="16.0" prefWidth="159.0" stylesheets="@resources/style.css" text="Observatory" textFill="WHITE">
+      <Button layoutX="8.0" layoutY="21.0" mnemonicParsing="false" onAction="#loadMainMenu" prefHeight="27.0" prefWidth="57.0" style="-fx-background-color: #80B4B4; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: #FFFFFF; -fx-background-insets: 0;" styleClass="text" stylesheets="@resources/style.css" text="Home" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="-38.0" layoutY="169.0" prefHeight="16.0" prefWidth="159.0" stylesheets="@resources/style.css" text="Observatory" textFill="WHITE">
          <styleClass>
             <String fx:value="vertical" />
             <String fx:value="text" />

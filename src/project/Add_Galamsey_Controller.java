@@ -15,10 +15,15 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
 public class Add_Galamsey_Controller {
+
+	@FXML
+	private Label lbl1;
 
     @FXML
     private TextField lattxtbx;
@@ -68,7 +73,8 @@ public class Add_Galamsey_Controller {
 		chcbx2.setItems(list2);
 	}
 
-    @FXML
+
+	@FXML
     void AddGalamsey(ActionEvent event) {
     	try {
 			//1. Creating Connection
@@ -93,7 +99,8 @@ public class Add_Galamsey_Controller {
 			chcbx.setValue(null);
 			chcbx2.setValue(null);
 
-			//add popup stuff here
+			lbl1.setText("Addition Successful");
+			lbl1.setTextFill(Paint.valueOf("#80B4B4"));
 			
 			stmnt.close();
 			con.close();
